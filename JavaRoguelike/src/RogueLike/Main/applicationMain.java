@@ -10,8 +10,8 @@ import javax.swing.JFrame;
 
 import RogueLike.Main.Screens.Screen;
 import RogueLike.Main.Screens.StartScreen;
-import asciiPanel.AsciiFont;
 import asciiPanel.AsciiPanel;
+//import asciiPanel.AsciiFont;
 
 //chapter 19 next
 
@@ -48,7 +48,7 @@ public class applicationMain extends JFrame implements KeyListener{
         //Dsun.java2d.uiScale.enabled=false
         //-Dsun.java2d.dpiaware=true
         //120, 48
-        terminal = new AsciiPanel(120, 48, AsciiFont.CP437_9x16);
+        terminal = new AsciiPanel(120, 48/*, AsciiFont.CP437_9x16*/);
         //
         //System.out.println("Width");
         //System.out.println(terminal.getCharWidth());
