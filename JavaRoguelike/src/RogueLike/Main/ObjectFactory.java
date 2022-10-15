@@ -225,6 +225,15 @@ public class ObjectFactory {
 		item.modifyIsEnchanted(1);
 		item.setEnchantmentEffect(enchantment);
 		item.setEnchantedName(item.enchantmentEffect().enchantmentName());
+		if(enchantment.enchantmentName() == "blazing ") {
+			item.modifyDealsFire(1);
+		}else if(enchantment.enchantmentName() == "freezing ") {
+			item.modifyDealsFrost(1);
+		}else if(enchantment.enchantmentName() == "shocking ") {
+			item.modifyDealsShock(1);
+		}else {
+			
+		}
 		item.modifyCurrentGoldValue(item.baseGoldValue());
 	}
 	
@@ -273,6 +282,84 @@ public class ObjectFactory {
 		player.setID(0);
 		new PlayerAI(player, messages, fov, this, this.world);
 		player.modifyPlayerName(playerName);
+		player.modifyPlayerSpecies(playerSpecies);
+		player.setStrength(startingStats.get(0));
+		player.setDexterity(startingStats.get(1));
+		player.setIntelligence(startingStats.get(2));
+		
+		
+		if(playerSpecies == "Orc") {
+			int amount = (int)(((player.baseStrength()*2)-5)*1.25);
+			player.setMaxHP(amount);
+		}else {
+			player.setMaxHP((player.baseStrength()*2)-5);
+		}
+		
+		if(playerSpecies == "Elf") {
+			int amount = (int)(((player.baseIntelligence()*2)-5)*1.25);
+			player.setMaxMana(amount);
+		}else if(playerSpecies == "Halfling") {
+			int amount = (int)(((player.baseIntelligence()*2)-5)*1.15);
+			player.setMaxMana(amount);
+		}else {
+			player.setMaxMana((player.baseIntelligence()*2)-5);
+		}
+		
+		if(playerSpecies == "Lycan") {
+			player.modifyVisionRadius(2);
+		}
+		if(playerSpecies == "Tiefling") {
+			player.setResistsFire(1);
+			player.setSaveBonusFire(2);
+		}
+		if(playerSpecies == "Dwarf") {
+			player.modifyBaseArmorClass(2);
+			player.setResistsAcid(1);
+			player.setSaveBonusAcid(2);
+		}
+		if(playerSpecies == "Dragonborn") {
+			player.setResistsFrost(1);
+			player.setSaveBonusFrost(2);
+		}
+		if(playerSpecies == "Gorgon") {
+			player.setResistsPoison(1);
+			player.setSaveBonusPoison(2);
+		}
+		if(playerSpecies == "Zendarii") {
+			player.setResistsChaos(1);
+			player.setSaveBonusChaos(2);
+		}
+		
+		player.setSkillSimpleWeapons(startingSkills.get(0));
+		player.setSkillMartialWeapons(startingSkills.get(1));
+		player.setSkillFinesseWeapons(startingSkills.get(2));
+		player.setSkillRangedWeapons(startingSkills.get(3));
+		player.setSkillFortitude(startingSkills.get(4));
+		player.setSkillPerception(startingSkills.get(5));
+		player.setSkillStealth(startingSkills.get(6));
+		player.setSkillEvocation(startingSkills.get(7));
+		player.setSkillPyromancy(startingSkills.get(8));
+		player.setSkillCryomancy(startingSkills.get(9));
+		player.setSkillElectromancy(startingSkills.get(10));
+		player.setSkillAlchemancy(startingSkills.get(11));
+			
+		if(playerSpecies == "Elf") {
+			player.spellbook().add(spellFactory.magicMissile(player));
+		}else if(playerSpecies == "Orc") {
+			player.spellbook().add(spellFactory.overgrowth(player));
+		}else if(playerSpecies == "Tiefling") {
+			player.spellbook().add(spellFactory.firebolt(player));
+		}else if(playerSpecies == "Dragonborn") {
+			player.spellbook().add(spellFactory.frostWard(player));
+		}else if(playerSpecies == "Halfling") {
+			player.spellbook().add(spellFactory.levitate(player));
+		}else if(playerSpecies == "Gorgon") {
+			player.spellbook().add(spellFactory.paralysis(player));
+		}else if(playerSpecies == "Lycan") {
+			player.spellbook().add(spellFactory.beastForm(player));
+		}else if(playerSpecies == "Zendarii") {
+			player.spellbook().add(spellFactory.confusion(player));
+		}
 		if(playerClass == "Warrior") {
 			player.modifyPlayerClass(playerClass);
 			
@@ -461,90 +548,15 @@ public class ObjectFactory {
 		}else {
 			
 		}
-		player.modifyPlayerSpecies(playerSpecies);
-		player.setStrength(startingStats.get(0));
-		player.setDexterity(startingStats.get(1));
-		player.setIntelligence(startingStats.get(2));
-		
-		
-		if(playerSpecies == "Orc") {
-			int amount = (int)(((player.baseStrength()*2)-5)*1.25);
-			player.setMaxHP(amount);
-		}else {
-			player.setMaxHP((player.baseStrength()*2)-5);
-		}
-		
-		if(playerSpecies == "Elf") {
-			int amount = (int)(((player.baseIntelligence()*2)-5)*1.25);
-			player.setMaxMana(amount);
-		}else if(playerSpecies == "Halfling") {
-			int amount = (int)(((player.baseIntelligence()*2)-5)*1.15);
-			player.setMaxMana(amount);
-		}else {
-			player.setMaxMana((player.baseIntelligence()*2)-5);
-		}
-		
-		if(playerSpecies == "Lycan") {
-			player.modifyVisionRadius(2);
-		}
-		if(playerSpecies == "Tiefling") {
-			player.setResistsFire(1);
-			player.setSaveBonusFire(2);
-		}
-		if(playerSpecies == "Dwarf") {
-			player.modifyBaseArmorClass(2);
-			player.setResistsAcid(1);
-			player.setSaveBonusAcid(2);
-		}
-		if(playerSpecies == "Dragonborn") {
-			player.setResistsFrost(1);
-			player.setSaveBonusFrost(2);
-		}
-		if(playerSpecies == "Gorgon") {
-			player.setResistsPoison(1);
-			player.setSaveBonusPoison(2);
-		}
-		if(playerSpecies == "Zendarii") {
-			player.setResistsChaos(1);
-			player.setSaveBonusChaos(2);
-		}
-		
-		player.setSkillSimpleWeapons(startingSkills.get(0));
-		player.setSkillMartialWeapons(startingSkills.get(1));
-		player.setSkillFinesseWeapons(startingSkills.get(2));
-		player.setSkillRangedWeapons(startingSkills.get(3));
-		player.setSkillFortitude(startingSkills.get(4));
-		player.setSkillPerception(startingSkills.get(5));
-		player.setSkillStealth(startingSkills.get(6));
-		player.setSkillEvocation(startingSkills.get(7));
-		player.setSkillPyromancy(startingSkills.get(8));
-		player.setSkillCryomancy(startingSkills.get(9));
-		player.setSkillElectromancy(startingSkills.get(10));
-		player.setSkillAlchemancy(startingSkills.get(11));
-			
-		if(playerSpecies == "Elf") {
-			player.spellbook().add(spellFactory.magicMissile(player));
-		}else if(playerSpecies == "Orc") {
-			player.spellbook().add(spellFactory.overgrowth(player));
-		}else if(playerSpecies == "Tiefling") {
-			player.spellbook().add(spellFactory.firebolt(player));
-		}else if(playerSpecies == "Dragonborn") {
-			player.spellbook().add(spellFactory.frostWard(player));
-		}else if(playerSpecies == "Halfling") {
-			player.spellbook().add(spellFactory.levitate(player));
-		}else if(playerSpecies == "Gorgon") {
-			player.spellbook().add(spellFactory.paralysis(player));
-		}else if(playerSpecies == "Lycan") {
-			player.spellbook().add(spellFactory.beastForm(player));
-		}else if(playerSpecies == "Zendarii") {
-			player.spellbook().add(spellFactory.confusion(player));
-		}
+	
 		
 		player.inventory().add(newRations(0, 0));
 		//temp
 		player.inventory().add(newPotionOfOvergrowth(0, 0));
 		player.inventory().add(newPotionOfOvergrowth(0, 0));
 		player.inventory().add(newPotionOfOvergrowth(0, 0));
+		player.inventory().add(newSpear(0, 0));
+		player.inventory().add(newBow(0, 0));
 		
 		//player.featbook().add(featFactory.simpleWeapons());
 		//player.featbook().add(featFactory.pyromancy());
@@ -565,6 +577,16 @@ public class ObjectFactory {
 		enchantItem(tempitem, newShockWeaponEnchantment());
 		upgradeItem(tempitem, 2);
 		player.inventory().add(tempitem);
+		Item tempitem2 = newCannon(0, 0);
+		curseItem(tempitem2);
+		enchantItem(tempitem2, newFireWeaponEnchantment());
+		upgradeItem(tempitem2, 3);
+		player.inventory().add(tempitem2);
+		Item tempitem3 = newPlateArmor(0, 0);
+		curseItem(tempitem3);
+		enchantItem(tempitem3, newFrostArmorEnchantment());
+		upgradeItem(tempitem3, 1);
+		player.inventory().add(tempitem3);
 		//player.inventory().add(newFireboltBook(0, player, 0));
 		//
 		//player.spellbook().add(spellFactory.test(player));

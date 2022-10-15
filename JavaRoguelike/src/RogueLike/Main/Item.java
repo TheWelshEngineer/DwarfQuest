@@ -46,10 +46,10 @@ public class Item implements Cloneable{
 		
 		if(this.isEnchanted() > 0) {
 			if(this.isArmor() > 0 || this.isShield() > 0) {
-				enchantmentName = String.format(" %s", this.enchantedName());
+				enchantmentName = String.format("%s", this.enchantedName());
 			}
 			if(this.isWeapon() > 0) {
-				enchantmentName = String.format("%s ", this.enchantedName());
+				enchantmentName = String.format("%s", this.enchantedName());
 			}
 		}
 		
