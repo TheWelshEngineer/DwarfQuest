@@ -530,6 +530,12 @@ public class FeatFactory {
 		return feat;
 	}
 	
+	public Feat towerShieldMastery() {
+		Feat feat = new Feat("Tower Shield Mastery", 69, false, 0);
+		feat.addPrerequisite(8);
+		return feat;
+	}
+	
 	
 	
 	

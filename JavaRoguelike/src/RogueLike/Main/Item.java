@@ -102,6 +102,15 @@ public class Item implements Cloneable{
 		appearance = newAppearance;
 	}
 	
+	private String potionName;
+	public String potionName() {
+		return potionName;
+	}
+	
+	public void setPotionName(String newName) {
+		potionName = newName;
+	}
+	
 	private int id;
 	public int id() {
 		return id;
@@ -685,6 +694,14 @@ public class Item implements Cloneable{
 		isHeavyArmor += amount;
 	}
 	
+	private int isTowerShield;
+	public int isTowerShield() {
+		return isTowerShield;
+	}
+	public void modifyIsTowerShield(int amount) {
+		isTowerShield += amount;
+	}
+	
 	private int isFinesse;
 	public int isFinesse() {
 		return isFinesse;
@@ -969,6 +986,8 @@ public class Item implements Cloneable{
 	public void modifyUpgradeLevel(int amount) {
 		upgradeLevel += amount;
 	}
+	
+	
 	
 	public String details() {
 		String details = "";

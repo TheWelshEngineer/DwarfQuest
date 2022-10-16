@@ -587,6 +587,11 @@ public class ObjectFactory {
 		enchantItem(tempitem3, newFrostArmorEnchantment());
 		upgradeItem(tempitem3, 1);
 		player.inventory().add(tempitem3);
+		Item tempitem4 = newTowerShield(0, 0);
+		curseItem(tempitem4);
+		enchantItem(tempitem4, newBounceArmorEnchantment());
+		upgradeItem(tempitem4, 2);
+		player.inventory().add(tempitem4);
 		//player.inventory().add(newFireboltBook(0, player, 0));
 		//
 		//player.spellbook().add(spellFactory.test(player));
@@ -2074,6 +2079,7 @@ public class ObjectFactory {
 		Item item = new Item((char)232, AsciiPanel.brightWhite, "round shield", null);
 		item.modifyDefenseValue(0.15);
 		item.modifyIsShield(1);
+		item.modifyIsLightArmor(1);
 		item.modifyArmorClass(2);
 		item.modifyEquippable(1);
 		item.setBaseGoldValue(100);
@@ -2092,11 +2098,12 @@ public class ObjectFactory {
 		Item item = new Item((char)232, AsciiPanel.brightWhite, "kite shield", null);
 		item.modifyDefenseValue(0.3);
 		item.modifyIsShield(1);
+		item.modifyIsMediumArmor(1);
 		item.modifyArmorClass(3);
 		item.modifyEquippable(1);
 		item.setBaseGoldValue(200);
 		item.modifyIsFortitude(1);
-		item.modifySkillRestriction(4);
+		item.modifySkillRestriction(3);
 		item.setCurrentGoldValue(item.baseGoldValue());
 		item.setID(46);
 		if(addToWorld > 0) {
@@ -2111,6 +2118,8 @@ public class ObjectFactory {
 		Item item = new Item((char)232, AsciiPanel.brightWhite, "tower shield", null);
 		item.modifyDefenseValue(0.45);
 		item.modifyIsShield(1);
+		item.modifyIsHeavyArmor(1);
+		item.modifyIsTowerShield(1);
 		item.modifyArmorClass(4);
 		item.modifyEquippable(1);
 		item.setBaseGoldValue(400);
@@ -2311,6 +2320,7 @@ public class ObjectFactory {
 		String appearance = potionAppearances.get(0);
 		Item item = new Item((char)13, potionColors.get(appearance), "potion of healing", appearance);
 		item.setQuaffEffect(effectFactory.maxHealth());
+		item.setPotionName("Healing");
 		item.modifyIsStackable(1);
 		item.setBaseGoldValue(100);
 		item.setCurrentGoldValue(item.baseGoldValue());
@@ -2327,6 +2337,7 @@ public class ObjectFactory {
 		String appearance = potionAppearances.get(1);
 		Item item = new Item((char)13, potionColors.get(appearance), "potion of mana", appearance);
 		item.setQuaffEffect(effectFactory.maxMana());
+		item.setPotionName("Mana Restoration");
 		item.modifyIsStackable(1);
 		item.setBaseGoldValue(100);
 		item.setCurrentGoldValue(item.baseGoldValue());
@@ -2343,6 +2354,7 @@ public class ObjectFactory {
 		String appearance = potionAppearances.get(2);
 		Item item = new Item((char)13, potionColors.get(appearance), "potion of poison", appearance);
 		item.setQuaffEffect(effectFactory.poisoned());
+		item.setPotionName("Poison");
 		item.modifyIsStackable(1);
 		item.setBaseGoldValue(100);
 		item.setCurrentGoldValue(item.baseGoldValue());
@@ -2359,6 +2371,7 @@ public class ObjectFactory {
 		String appearance = potionAppearances.get(3);
 		Item item = new Item((char)13, potionColors.get(appearance), "potion of giant strength", appearance);
 		item.setQuaffEffect(effectFactory.giantStrength());
+		item.setPotionName("Giant Strength");
 		item.modifyIsStackable(1);
 		item.setBaseGoldValue(100);
 		item.setCurrentGoldValue(item.baseGoldValue());
@@ -2375,6 +2388,7 @@ public class ObjectFactory {
 		String appearance = potionAppearances.get(4);
 		Item item = new Item((char)13, potionColors.get(appearance), "potion of invisibility", appearance);
 		item.setQuaffEffect(effectFactory.invisible());
+		item.setPotionName("Invisibility");
 		item.modifyIsStackable(1);
 		item.setBaseGoldValue(100);
 		item.setCurrentGoldValue(item.baseGoldValue());
@@ -2391,6 +2405,7 @@ public class ObjectFactory {
 		String appearance = potionAppearances.get(5);
 		Item item = new Item((char)13, potionColors.get(appearance), "potion of paralysis", appearance);
 		item.setQuaffEffect(effectFactory.paralyzed());
+		item.setPotionName("Paralysis");
 		item.modifyIsStackable(1);
 		item.setBaseGoldValue(100);
 		item.setCurrentGoldValue(item.baseGoldValue());
@@ -2407,6 +2422,7 @@ public class ObjectFactory {
 		String appearance = potionAppearances.get(6);
 		Item item = new Item((char)13, potionColors.get(appearance), "potion of caustic gas", appearance);
 		item.setQuaffEffect(effectFactory.causticVapour());
+		item.setPotionName("Caustic Cloud");
 		item.modifyIsStackable(1);
 		item.setBaseGoldValue(100);
 		item.setCurrentGoldValue(item.baseGoldValue());
@@ -2423,6 +2439,7 @@ public class ObjectFactory {
 		String appearance = potionAppearances.get(7);
 		Item item = new Item((char)13, potionColors.get(appearance), "potion of restoration", appearance);
 		item.setQuaffEffect(effectFactory.restoration());
+		item.setPotionName("Restoration");
 		item.modifyIsStackable(1);
 		item.setBaseGoldValue(100);
 		item.setCurrentGoldValue(item.baseGoldValue());
@@ -2439,6 +2456,7 @@ public class ObjectFactory {
 		String appearance = potionAppearances.get(8);
 		Item item = new Item((char)13, potionColors.get(appearance), "potion of mind vision", appearance);
 		item.setQuaffEffect(effectFactory.mindVision());
+		item.setPotionName("Mind Vision");
 		item.modifyIsStackable(1);
 		item.setBaseGoldValue(100);
 		item.setCurrentGoldValue(item.baseGoldValue());
@@ -2456,6 +2474,7 @@ public class ObjectFactory {
 		String appearance = potionAppearances.get(9);
 		Item item = new Item((char)13, potionColors.get(appearance), "potion of overgrowth", appearance);
 		item.setQuaffEffect(effectFactory.overgrow());
+		item.setPotionName("Overgrowth");
 		item.setBaseGoldValue(100);
 		item.setCurrentGoldValue(item.baseGoldValue());
 		item.modifyIsStackable(1);
@@ -2472,6 +2491,7 @@ public class ObjectFactory {
 		String appearance = potionAppearances.get(10);
 		Item item = new Item((char)13, potionColors.get(appearance), "potion of combustion", appearance);
 		item.setQuaffEffect(effectFactory.fireball());
+		item.setPotionName("Combustion Cloud");
 		item.setBaseGoldValue(100);
 		item.setCurrentGoldValue(item.baseGoldValue());
 		item.modifyIsStackable(1);
@@ -2488,6 +2508,7 @@ public class ObjectFactory {
 		String appearance = potionAppearances.get(11);
 		Item item = new Item((char)13, potionColors.get(appearance), "potion of levitation", appearance);
 		item.setQuaffEffect(effectFactory.levitating());
+		item.setPotionName("Levitation");
 		item.modifyIsStackable(1);
 		item.setBaseGoldValue(100);
 		item.setCurrentGoldValue(item.baseGoldValue());

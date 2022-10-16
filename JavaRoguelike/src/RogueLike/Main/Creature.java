@@ -2362,6 +2362,9 @@ public class Creature implements Cloneable{
 		}else {
 			doAction("pick up a %s", nameOf(item));
 			world.remove(x, y, z);
+			if(nameOf(item) == item.name()) {
+				item.modifyIsIdentified(1);
+			}
 			inventory.add(item);
 			stackItems();
 		}

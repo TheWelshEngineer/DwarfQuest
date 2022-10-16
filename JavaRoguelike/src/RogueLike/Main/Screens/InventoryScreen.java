@@ -217,6 +217,7 @@ public class InventoryScreen implements Screen{
 							terminal.write("Damage Type: Physical (?)", x, z++);
 							
 						}
+						z++;
 						
 						String traits = "";
 						String traits2 = "";
@@ -278,31 +279,201 @@ public class InventoryScreen implements Screen{
 						}
 						
 						traits = String.format("%s%s%s%s%s%s%s%s%s%s%s%s%s%s", enchanted, upgraded, cursed, versatile, twohanded, thrown, simple, martial, finesse, ranged, flintlock, arrows, bolts, powder);
-						if(35+traits.length() > 120) {
+						if(x+traits.length() > 120) {
 							traits = String.format("%s%s%s%s%s%s%s", enchanted, upgraded, cursed, versatile, twohanded, thrown, simple);
 							traits2 = String.format("%s%s%s%s%s%s%s", martial, finesse, ranged, flintlock, arrows, bolts, powder);
 							terminal.write(String.format("Traits: %s", traits), x, z++);
-							terminal.write(String.format("%s", traits2), x+8, z++);
+							terminal.write(String.format("%s", traits2.replaceFirst(".$", "").replaceFirst(".$", "")), x+8, z++);
 						}else {
-							terminal.write(String.format("Traits: %s", traits), x, z++);
+							
+							terminal.write(String.format("Traits: %s", traits.replaceFirst(".$", "").replaceFirst(".$", "")), x, z++);
 						}
-						
+						z++;
+					}
+					
+					if(item.isArmor() > 0|| item.isShield() > 0) {
+						String armor = "";
 						if(item.isIdentified() > 0) {
-							terminal.write(String.format("Value: %s gold", item.currentGoldValue()), x, z++);
+							armor = String.format("Armor Class: %d", item.armorClass()+item.upgradeLevel());
 						}else {
-							terminal.write(String.format("Value: %s gold (?)", item.baseGoldValue()), x, z++);
+							armor = String.format("Armor Class: %d (?)", item.armorClass());
+						}
+						terminal.write(armor, x, z++);
+						
+						String traits = "";
+						String traits2 = "";
+						String enchanted = "";
+						if(item.isEnchanted() > 0 && item.isIdentified() > 0) {
+							enchanted = "Enchanted, ";
+						}
+						String upgraded = "";
+						if(item.upgradeLevel() > 0 && item.isIdentified() > 0) {
+							upgraded = String.format("Upgraded (+%d), ", item.upgradeLevel());
+						}
+						String cursed = "";
+						if(item.isCursed() > 0 && item.curseKnown() > 0) {
+							cursed = "Cursed, ";
+						}
+						String light = "";
+						if(item.isLightArmor() > 0) {
+							light = "Light Armor, ";
+						}
+						String medium = "";
+						if(item.isMediumArmor() > 0) {
+							medium = "Medium Armor, ";
+						}
+						String heavy = "";
+						if(item.isHeavyArmor() > 0) {
+							heavy = "Heavy Armor, ";
+						}
+						String shield = "";
+						if(item.isShield() > 0) {
+							shield = "Shield, ";
+						}
+						String tower = "";
+						if(item.isTowerShield() > 0) {
+							tower = "Tower Shield, ";
 						}
 						
-						
-						
-						
-						
-						
-						
-						
+						traits = String.format("%s%s%s%s%s%s%s%s", enchanted, upgraded, cursed, light, medium, heavy, shield, tower);
+						terminal.write(String.format("Traits: %s", traits.replaceFirst(".$", "").replaceFirst(".$", "")), x, z++);
+						z++;
 						
 						
 					}
+					
+					if(item.skillRestriction() > 0) {
+						String skill = "";
+						String feat = "";
+						String flintlock = "";
+						String tower = "";
+						
+						if(item.isSimple() > 0) {
+							skill = "Simple Weapons";
+							feat = "Simple Weapon Training";
+						}
+						if(item.isMartial() > 0) {
+							skill = "Martial Weapons";
+							feat = "Martial Weapon Training";
+						}
+						if(item.isFinesse() > 0) {
+							skill = "Finesse Weapons";
+							feat = "Finesse Weapon Training";
+						}
+						if(item.isRangedWeapon() > 0) {
+							skill = "Ranged Weapons";
+							feat = "Ranged Weapon Training";
+						}
+						if(item.usesPowder() > 0) {
+							flintlock = "Flintlock Weapon Training";
+						}
+						if(item.isLightArmor() > 0) {
+							skill = "Fortitude";
+							feat = "Light Armor Training";
+						}
+						if(item.isMediumArmor() > 0) {
+							skill = "Fortitude";
+							feat = "Medium Armor Training";
+						}
+						if(item.isHeavyArmor() > 0) {
+							skill = "Fortitude";
+							feat = "Heavy Armor Training";
+						}
+						if(item.isTowerShield() > 0) {
+							tower = "Tower Shield Training";
+						}
+						if(item.isEvocation() > 0) {
+							skill = "Evocation";
+							feat = "Evocation Training";
+						}
+						if(item.isPyromancy() > 0) {
+							skill = "Pyromancy";
+							feat = "Pyromancy Training";
+						}
+						if(item.isCryomancy() > 0) {
+							skill = "Cryomancy";
+							feat = "Cryomancy Training";
+						}
+						if(item.isElectromancy() > 0) {
+							skill = "Electromancy";
+							feat = "Electromancy Training";
+						}
+						if(item.isAlchemancy() > 0) {
+							skill = "Alchemancy";
+							feat = "Alchemancy Training";
+						}
+						
+						String skillprint = String.format("Prerequisites: %s (%d) or %s", skill, item.skillRestriction(), feat);
+						if(skillprint.length()+x > 120 || (tower != "" || flintlock != "")) {
+							skillprint = String.format("Prerequisites: %s (%d) or %s,", skill, item.skillRestriction(), feat);
+							terminal.write(skillprint, x, z++);
+							skillprint = String.format("%s%s", flintlock, tower);
+							terminal.write(skillprint, x+15, z++);
+						}else {
+							terminal.write(skillprint, x, z++);
+						}
+						z++;
+
+					}
+					
+					if(item.foodValue() > 0) {
+						String food = "";
+						if(item.foodValue() < 100) {
+							food = "Disgusting..";
+						}
+						if(item.foodValue() < 300 && item.foodValue() >= 100) {
+							food = "Tasty";
+						}
+						if(item.foodValue() < 600 && item.foodValue() >= 300) {
+							food = "Satisfying";
+						}
+						if(item.foodValue() < 900 && item.foodValue() >= 600) {
+							food = "Delicious!";
+						}
+						if(item.foodValue() >= 900) {
+							food = "Incredible!";
+						}
+						
+						terminal.write(String.format("Food Value: %s", food), x, z++);
+					}
+					
+					if(item.quaffEffect() != null) {
+						String effect = "Unknown";
+						if(item.isIdentified() > 0) {
+							effect = item.potionName();
+						}
+						terminal.write(String.format("Potion Effect: %s", effect), x, z++);
+					}
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					if(item.isIdentified() > 0 || (item.foodValue() > 0 || item.isKey() > 0)) {
+						terminal.write(String.format("Value: %s gold", item.currentGoldValue()), x, z++);
+					}else {
+						terminal.write(String.format("Value: %s gold (?)", item.baseGoldValue()), x, z++);
+					}
+					
 					
 					
 					
