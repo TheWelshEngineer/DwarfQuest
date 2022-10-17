@@ -497,7 +497,15 @@ public class InventoryScreen implements Screen{
 				if(checkIfSelected(i, check) && inventory.get(i).equippable() > 0) {
 					terminal.writeCenter("-- [X]: Equip --", 36);
 				}
-				
+				if(checkIfSelected(i, check) && inventory.get(i).foodValue() > 0) {
+					terminal.writeCenter("-- [E]: Eat --", 36);
+				}
+				if(checkIfSelected(i, check) && inventory.get(i).quaffEffect() != null) {
+					terminal.writeCenter("-- [Q]: Quaff --", 36);
+				}
+				if(checkIfSelected(i, check) && inventory.get(i).writtenSpells().size() > 0) {
+					terminal.writeCenter("-- [R]: Read --", 36);
+				}
 				
 				
 				
@@ -505,8 +513,8 @@ public class InventoryScreen implements Screen{
 		}
 		//
 
-    
-        terminal.writeCenter("-- [UP / DOWN]: Move Selection | [ESCAPE]: Cancel --", 38);
+		terminal.writeCenter("-- [D]: Drop --", 38);
+        terminal.writeCenter("-- [UP / DOWN]: Move Selection | [ESCAPE]: Cancel --", 40);
 		
 	}
 	
@@ -570,6 +578,25 @@ public class InventoryScreen implements Screen{
 			if(inventory.get(check).quaffEffect() != null) {
 				player.quaff(inventory.get(check));
 				return null;
+			}else {
+				return this;
+			}
+			
+		case KeyEvent.VK_R:
+			if(inventory.get(check).writtenSpells().size() > 0) {
+				if(inventory.get(check).isSpellbook() > 0){
+					player.learnSpell(inventory.get(check).writtenSpells().get(0), inventory.get(check));
+					return null;
+				}else {
+					if(inventory.get(check).writtenSpells().size() == 1 && !inventory.get(check).writtenSpells().get(0).isSelfCast()) {
+						return new CastSpellScreen(player, "Cast spell at?", sx, sy, inventory.get(check).writtenSpells().get(0), inventory.get(check));
+					}else if(inventory.get(check).writtenSpells().size() == 1 && inventory.get(check).writtenSpells().get(0).isSelfCast()){
+						player.castSpell(inventory.get(check).writtenSpells().get(0), player.x(), player.y(), inventory.get(check));
+						return null;
+					}else {
+						return new ReadSpellScreen(player, sx, sy, inventory.get(check));
+					}
+				}
 			}else {
 				return this;
 			}

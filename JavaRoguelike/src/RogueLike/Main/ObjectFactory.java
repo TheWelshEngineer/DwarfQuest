@@ -370,12 +370,15 @@ public class ObjectFactory {
 			player.featbook().add(featFactory.mediumArmor());
 			
 			Item startWeaponWarrior = newLongsword(0, 0);
+			player.learnNameQuiet(startWeaponWarrior);
 			player.inventory().add(startWeaponWarrior);
 			player.equip(startWeaponWarrior);
 			Item startArmorWarrior = newChainmailArmor(0, 0);
+			player.learnNameQuiet(startArmorWarrior);
 			player.inventory().add(startArmorWarrior);
 			player.equip(startArmorWarrior);
 			Item startShieldWarrior = newKiteShield(0, 0);
+			player.learnNameQuiet(startShieldWarrior);
 			player.inventory().add(startShieldWarrior);
 			player.equip(startShieldWarrior);
 			
@@ -391,14 +394,17 @@ public class ObjectFactory {
 			player.featbook().add(featFactory.stealth());
 			
 			Item startWeaponRogue = newDagger(0, 0);
+			player.learnNameQuiet(startWeaponRogue);
 			player.inventory().add(startWeaponRogue);
 			player.equip(startWeaponRogue);
 			Item startArmorRogue = newPaddedArmor(0, 0);
+			player.learnNameQuiet(startArmorRogue);
 			player.inventory().add(startArmorRogue);
 			player.equip(startArmorRogue);
 			Item startItemRogue = newPotionOfInvisibility(0, 0);
-			player.inventory().add(startItemRogue);
 			player.learnNameQuiet(startItemRogue);
+			player.inventory().add(startItemRogue);
+			
 			
 			player.setHPScaleAmount(player.hpScaleMedium());
 			player.setManaScaleAmount(player.manaScaleLow());
@@ -411,12 +417,14 @@ public class ObjectFactory {
 			player.featbook().add(featFactory.pyromancy());
 			player.featbook().add(featFactory.cryomancy());
 			
-			Item startWeaponMage = newClub(0, 0);
-			player.inventory().add(startWeaponMage);
-			player.equip(startWeaponMage);
-			Item startArmorMage = newPaddedArmor(0, 0);
-			player.inventory().add(startArmorMage);
-			player.equip(startArmorMage);
+			Item startWeaponWizard = newClub(0, 0);
+			player.learnNameQuiet(startWeaponWizard);
+			player.inventory().add(startWeaponWizard);
+			player.equip(startWeaponWizard);
+			Item startArmorWizard = newPaddedArmor(0, 0);
+			player.learnNameQuiet(startArmorWizard);
+			player.inventory().add(startArmorWizard);
+			player.equip(startArmorWizard);
 
 			player.setHPScaleAmount(player.hpScaleLow());
 			player.setManaScaleAmount(player.manaScaleHigh());
@@ -429,15 +437,17 @@ public class ObjectFactory {
 			player.featbook().add(featFactory.finesseWeapons());
 			player.featbook().add(featFactory.alchemancy());
 			
-			Item startWeaponMage = newDagger(0, 0);
-			player.inventory().add(startWeaponMage);
-			player.equip(startWeaponMage);
-			Item startArmorMage = newLeatherArmor(0, 0);
-			player.inventory().add(startArmorMage);
-			player.equip(startArmorMage);
-			Item startItemRogue = newPotionOfPoison(0, 0);
-			player.inventory().add(startItemRogue);
-			player.learnNameQuiet(startItemRogue);
+			Item startWeaponAlchemist = newDagger(0, 0);
+			player.learnNameQuiet(startWeaponAlchemist);
+			player.inventory().add(startWeaponAlchemist);
+			player.equip(startWeaponAlchemist);
+			Item startArmorAlchemist = newLeatherArmor(0, 0);
+			player.learnNameQuiet(startArmorAlchemist);
+			player.inventory().add(startArmorAlchemist);
+			player.equip(startArmorAlchemist);
+			Item startItemAlchemist = newPotionOfPoison(0, 0);
+			player.learnNameQuiet(startItemAlchemist);
+			player.inventory().add(startItemAlchemist);
 
 			player.setHPScaleAmount(player.hpScaleMedium());
 			player.setManaScaleAmount(player.manaScaleMedium());
@@ -451,15 +461,18 @@ public class ObjectFactory {
 			player.featbook().add(featFactory.lightArmor());
 			player.featbook().add(featFactory.mediumArmor());
 			
-			Item startWeaponMage = newBattleaxe(0, 0);
-			player.inventory().add(startWeaponMage);
-			player.equip(startWeaponMage);
-			Item startArmorMage = newLeatherArmor(0, 0);
-			player.inventory().add(startArmorMage);
-			player.equip(startArmorMage);
-			Item startShieldMage = newRoundShield(0, 0);
-			player.inventory().add(startShieldMage);
-			player.equip(startShieldMage);
+			Item startWeaponBarbarian = newBattleaxe(0, 0);
+			player.learnNameQuiet(startWeaponBarbarian);
+			player.inventory().add(startWeaponBarbarian);
+			player.equip(startWeaponBarbarian);
+			Item startArmorBarbarian = newLeatherArmor(0, 0);
+			player.learnNameQuiet(startArmorBarbarian);
+			player.inventory().add(startArmorBarbarian);
+			player.equip(startArmorBarbarian);
+			Item startShieldBarbarian = newRoundShield(0, 0);
+			player.learnNameQuiet(startShieldBarbarian);
+			player.inventory().add(startShieldBarbarian);
+			player.equip(startShieldBarbarian);
 
 			player.setHPScaleAmount(player.hpScaleHigh());
 			player.setManaScaleAmount(player.manaScaleLow());
@@ -472,12 +485,14 @@ public class ObjectFactory {
 			player.featbook().add(featFactory.electromancy());
 			player.featbook().add(featFactory.perception());
 			
-			Item startWeaponMage = newDagger(0, 0);
-			player.inventory().add(startWeaponMage);
-			player.equip(startWeaponMage);
-			Item startArmorMage = newPaddedArmor(0, 0);
-			player.inventory().add(startArmorMage);
-			player.equip(startArmorMage);
+			Item startWeaponWitch = newDagger(0, 0);
+			player.learnNameQuiet(startWeaponWitch);
+			player.inventory().add(startWeaponWitch);
+			player.equip(startWeaponWitch);
+			Item startArmorWitch = newPaddedArmor(0, 0);
+			player.learnNameQuiet(startArmorWitch);
+			player.inventory().add(startArmorWitch);
+			player.equip(startArmorWitch);
 
 			player.setHPScaleAmount(player.hpScaleLow());
 			player.setManaScaleAmount(player.manaScaleHigh());
@@ -491,15 +506,18 @@ public class ObjectFactory {
 			player.featbook().add(featFactory.lightArmor());
 			player.featbook().add(featFactory.evocation());
 			
-			Item startWeaponMage = newWarhammer(0, 0);
-			player.inventory().add(startWeaponMage);
-			player.equip(startWeaponMage);
-			Item startArmorMage = newStuddedLeatherArmor(0, 0);
-			player.inventory().add(startArmorMage);
-			player.equip(startArmorMage);
-			Item startShieldMage = newRoundShield(0, 0);
-			player.inventory().add(startShieldMage);
-			player.equip(startShieldMage);
+			Item startWeaponEvoker = newWarhammer(0, 0);
+			player.learnNameQuiet(startWeaponEvoker);
+			player.inventory().add(startWeaponEvoker);
+			player.equip(startWeaponEvoker);
+			Item startArmorEvoker = newStuddedLeatherArmor(0, 0);
+			player.learnNameQuiet(startArmorEvoker);
+			player.inventory().add(startArmorEvoker);
+			player.equip(startArmorEvoker);
+			Item startShieldEvoker = newRoundShield(0, 0);
+			player.learnNameQuiet(startShieldEvoker);
+			player.inventory().add(startShieldEvoker);
+			player.equip(startShieldEvoker);
 
 			player.setHPScaleAmount(player.hpScaleMedium());
 			player.setManaScaleAmount(player.manaScaleMedium());
@@ -512,12 +530,14 @@ public class ObjectFactory {
 			player.featbook().add(featFactory.pyromancy());
 			player.featbook().add(featFactory.simpleFire());
 			
-			Item startWeaponMage = newHandaxe(0, 0);
-			player.inventory().add(startWeaponMage);
-			player.equip(startWeaponMage);
-			Item startArmorMage = newPaddedArmor(0, 0);
-			player.inventory().add(startArmorMage);
-			player.equip(startArmorMage);
+			Item startWeaponSorcerer = newHandaxe(0, 0);
+			player.learnNameQuiet(startWeaponSorcerer);
+			player.inventory().add(startWeaponSorcerer);
+			player.equip(startWeaponSorcerer);
+			Item startArmorSorcerer = newPaddedArmor(0, 0);
+			player.learnNameQuiet(startArmorSorcerer);
+			player.inventory().add(startArmorSorcerer);
+			player.equip(startArmorSorcerer);
 
 			player.setHPScaleAmount(player.hpScaleMedium());
 			player.setManaScaleAmount(player.manaScaleHigh());
@@ -531,16 +551,19 @@ public class ObjectFactory {
 			player.featbook().add(featFactory.lightArmor());
 			player.featbook().add(featFactory.perception());
 			
-			Item startWeaponMage = newLongbow(0, 0);
-			player.inventory().add(startWeaponMage);
-			player.equip(startWeaponMage);
-			Item startArmorMage = newLeatherArmor(0, 0);
-			player.inventory().add(startArmorMage);
-			player.equip(startArmorMage);
-			Item startShieldMage = newArrows(0, 0);
-			startShieldMage.setStackAmount(20);
-			player.inventory().add(startShieldMage);
-			player.equip(startShieldMage);
+			Item startWeaponRanger = newLongbow(0, 0);
+			player.learnNameQuiet(startWeaponRanger);
+			player.inventory().add(startWeaponRanger);
+			player.equip(startWeaponRanger);
+			Item startArmorRanger = newLeatherArmor(0, 0);
+			player.learnNameQuiet(startArmorRanger);
+			player.inventory().add(startArmorRanger);
+			player.equip(startArmorRanger);
+			Item startAmmoRanger = newArrows(0, 0);
+			player.learnNameQuiet(startAmmoRanger);
+			startAmmoRanger.setStackAmount(20);
+			player.inventory().add(startAmmoRanger);
+			player.equip(startAmmoRanger);
 
 			player.setHPScaleAmount(player.hpScaleMedium());
 			player.setManaScaleAmount(player.manaScaleLow());
@@ -576,6 +599,7 @@ public class ObjectFactory {
 		curseItem(tempitem);
 		enchantItem(tempitem, newShockWeaponEnchantment());
 		upgradeItem(tempitem, 2);
+		player.learnNameQuiet(tempitem);
 		player.inventory().add(tempitem);
 		Item tempitem2 = newCannon(0, 0);
 		curseItem(tempitem2);
