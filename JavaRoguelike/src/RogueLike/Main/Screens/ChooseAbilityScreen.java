@@ -24,6 +24,13 @@ public class ChooseAbilityScreen implements Screen{
 	public char intLeft = '>';
 	public char intRight = '<';
 	
+	public char strUp = '+';
+	public char strDown = '-';
+	public char dexUp = '+';
+	public char dexDown = '-';
+	public char intUp = '+';
+	public char intDown = '-';
+	
 	public void changeMarkers(int check) {
 		if(check == 0) {
 			strLeft = '>';
@@ -32,6 +39,36 @@ public class ChooseAbilityScreen implements Screen{
 			dexRight = ' ';
 			intLeft = ' ';
 			intRight = ' ';
+			if(playerStrength == 8) {
+				strUp = '+';
+				strDown = ' ';
+			}else if(playerStrength == 15) {
+				strUp = ' ';
+				strDown = '-';
+			}else{
+				strUp = '+';
+				strDown = '-';
+			}
+			if(playerDexterity == 8) {
+				dexUp = '+';
+				dexDown = ' ';
+			}else if(playerDexterity == 15) {
+				dexUp = ' ';
+				dexDown = '-';
+			}else{
+				dexUp = '+';
+				dexDown = '-';
+			}
+			if(playerIntelligence == 8) {
+				intUp = '+';
+				intDown = ' ';
+			}else if(playerIntelligence == 15) {
+				intUp = ' ';
+				intDown = '-';
+			}else{
+				intUp = '+';
+				intDown = '-';
+			}
 		}else if(check == 1) {
 			strLeft = ' ';
 			strRight = ' ';
@@ -39,6 +76,36 @@ public class ChooseAbilityScreen implements Screen{
 			dexRight = '<';
 			intLeft = ' ';
 			intRight = ' ';
+			if(playerStrength == 8) {
+				strUp = '+';
+				strDown = ' ';
+			}else if(playerStrength == 15) {
+				strUp = ' ';
+				strDown = '-';
+			}else{
+				strUp = '+';
+				strDown = '-';
+			}
+			if(playerDexterity == 8) {
+				dexUp = '+';
+				dexDown = ' ';
+			}else if(playerDexterity == 15) {
+				dexUp = ' ';
+				dexDown = '-';
+			}else{
+				dexUp = '+';
+				dexDown = '-';
+			}
+			if(playerIntelligence == 8) {
+				intUp = '+';
+				intDown = ' ';
+			}else if(playerIntelligence == 15) {
+				intUp = ' ';
+				intDown = '-';
+			}else{
+				intUp = '+';
+				intDown = '-';
+			}
 		}else if(check == 2) {
 			strLeft = ' ';
 			strRight = ' ';
@@ -46,6 +113,36 @@ public class ChooseAbilityScreen implements Screen{
 			dexRight = ' ';
 			intLeft = '>';
 			intRight = '<';
+			if(playerStrength == 8) {
+				strUp = '+';
+				strDown = ' ';
+			}else if(playerStrength == 15) {
+				strUp = ' ';
+				strDown = '-';
+			}else{
+				strUp = '+';
+				strDown = '-';
+			}
+			if(playerDexterity == 8) {
+				dexUp = '+';
+				dexDown = ' ';
+			}else if(playerDexterity == 15) {
+				dexUp = ' ';
+				dexDown = '-';
+			}else{
+				dexUp = '+';
+				dexDown = '-';
+			}
+			if(playerIntelligence == 8) {
+				intUp = '+';
+				intDown = ' ';
+			}else if(playerIntelligence == 15) {
+				intUp = ' ';
+				intDown = '-';
+			}else{
+				intUp = '+';
+				intDown = '-';
+			}
 		}
 	}
 	
@@ -122,9 +219,9 @@ public class ChooseAbilityScreen implements Screen{
 		
 		terminal.writeCenter(String.format("-- Points remaining: %d --", abilityPoints), y);
 		
-		terminal.writeCenter(String.format("%c Strength ( %d / +%d) %c", strLeft, playerStrength, strengthModifier(), strRight), y+=3);
-		terminal.writeCenter(String.format("%c Dexterity ( %d / +%d) %c", dexLeft, playerDexterity, dexterityModifier(), dexRight), y+=2);
-		terminal.writeCenter(String.format("%c Intelligence ( %d / +%d) %c", intLeft, playerIntelligence, intelligenceModifier(), intRight), y+=2);
+		terminal.writeCenter(String.format("%c %c Strength ( %d / +%d ) %c %c", strDown, strLeft, playerStrength, strengthModifier(), strRight, strUp), y+=3);
+		terminal.writeCenter(String.format("%c %c Dexterity ( %d / +%d ) %c %c", dexDown, dexLeft, playerDexterity, dexterityModifier(), dexRight, dexUp), y+=2);
+		terminal.writeCenter(String.format("%c %c Intelligence ( %d / +%d ) %c %c", intDown, intLeft, playerIntelligence, intelligenceModifier(), intRight, intUp), y+=2);
 		if(check == 0) {
 			terminal.writeCenter("Strength represents the physical power of your body.", y+=6);
 			terminal.writeCenter("Strength increases the damage dealt by simple and martial weapons,", y+=1);

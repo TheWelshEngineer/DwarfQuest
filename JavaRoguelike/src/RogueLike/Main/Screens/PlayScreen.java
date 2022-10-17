@@ -134,6 +134,9 @@ public class PlayScreen implements Screen{
 	        //
 	        case KeyEvent.VK_B: subscreen = new InventoryScreen(player, player.x - getScrollX(), player.y - getScrollY()); inputAccepted = 1; break;
 	        //
+	        //
+	        case KeyEvent.VK_1: player.modifyXP(1000000000);
+	        //
 	        case KeyEvent.VK_G: player.pickup(); inputAccepted = 1; break;
 	        case KeyEvent.VK_S: player.search(20, false); inputAccepted = 1; break;
 	        case KeyEvent.VK_UP: 

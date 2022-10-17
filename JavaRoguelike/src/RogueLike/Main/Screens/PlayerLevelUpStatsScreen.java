@@ -27,6 +27,13 @@ public class PlayerLevelUpStatsScreen implements Screen{
 	public char intLeft = '>';
 	public char intRight = '<';
 	
+	public char strUp = '+';
+	public char strDown = '-';
+	public char dexUp = '+';
+	public char dexDown = '-';
+	public char intUp = '+';
+	public char intDown = '-';
+	
 	public void changeMarkers(int check) {
 		if(check == 0) {
 			strLeft = '>';
@@ -35,6 +42,36 @@ public class PlayerLevelUpStatsScreen implements Screen{
 			dexRight = ' ';
 			intLeft = ' ';
 			intRight = ' ';
+			if(playerStrength == player.baseStrength()) {
+				strUp = '+';
+				strDown = ' ';
+			}else if(playerStrength == 30 || points == 0) {
+				strUp = ' ';
+				strDown = '-';
+			}else{
+				strUp = '+';
+				strDown = '-';
+			}
+			if(playerDexterity == player.baseDexterity()) {
+				dexUp = '+';
+				dexDown = ' ';
+			}else if(playerDexterity == 30 || points == 0) {
+				dexUp = ' ';
+				dexDown = '-';
+			}else{
+				dexUp = '+';
+				dexDown = '-';
+			}
+			if(playerIntelligence == player.baseIntelligence()) {
+				intUp = '+';
+				intDown = ' ';
+			}else if(playerIntelligence == 30 || points == 0) {
+				intUp = ' ';
+				intDown = '-';
+			}else{
+				intUp = '+';
+				intDown = '-';
+			}
 		}else if(check == 1) {
 			strLeft = ' ';
 			strRight = ' ';
@@ -42,6 +79,36 @@ public class PlayerLevelUpStatsScreen implements Screen{
 			dexRight = '<';
 			intLeft = ' ';
 			intRight = ' ';
+			if(playerStrength == player.baseStrength()) {
+				strUp = '+';
+				strDown = ' ';
+			}else if(playerStrength == 30 || points == 0) {
+				strUp = ' ';
+				strDown = '-';
+			}else{
+				strUp = '+';
+				strDown = '-';
+			}
+			if(playerDexterity == player.baseDexterity()) {
+				dexUp = '+';
+				dexDown = ' ';
+			}else if(playerDexterity == 30 || points == 0) {
+				dexUp = ' ';
+				dexDown = '-';
+			}else{
+				dexUp = '+';
+				dexDown = '-';
+			}
+			if(playerIntelligence == player.baseIntelligence()) {
+				intUp = '+';
+				intDown = ' ';
+			}else if(playerIntelligence == 30 || points == 0) {
+				intUp = ' ';
+				intDown = '-';
+			}else{
+				intUp = '+';
+				intDown = '-';
+			}
 		}else if(check == 2) {
 			strLeft = ' ';
 			strRight = ' ';
@@ -49,6 +116,36 @@ public class PlayerLevelUpStatsScreen implements Screen{
 			dexRight = ' ';
 			intLeft = '>';
 			intRight = '<';
+			if(playerStrength == player.baseStrength()) {
+				strUp = '+';
+				strDown = ' ';
+			}else if(playerStrength == 30 || points == 0) {
+				strUp = ' ';
+				strDown = '-';
+			}else{
+				strUp = '+';
+				strDown = '-';
+			}
+			if(playerDexterity == player.baseDexterity()) {
+				dexUp = '+';
+				dexDown = ' ';
+			}else if(playerDexterity == 30 || points == 0) {
+				dexUp = ' ';
+				dexDown = '-';
+			}else{
+				dexUp = '+';
+				dexDown = '-';
+			}
+			if(playerIntelligence == player.baseIntelligence()) {
+				intUp = '+';
+				intDown = ' ';
+			}else if(playerIntelligence == 30 || points == 0) {
+				intUp = ' ';
+				intDown = '-';
+			}else{
+				intUp = '+';
+				intDown = '-';
+			}
 		}
 	}
 	
@@ -106,9 +203,9 @@ public class PlayerLevelUpStatsScreen implements Screen{
 		
 		terminal.writeCenter(String.format("-- Points remaining: %d --", points), y);
 		
-		terminal.writeCenter(String.format("%c Strength ( %d / +%d) %c", strLeft, playerStrength, strMod(), strRight), y+=3);
-		terminal.writeCenter(String.format("%c Dexterity ( %d / +%d) %c", dexLeft, playerDexterity, dexMod(), dexRight), y+=2);
-		terminal.writeCenter(String.format("%c Intelligence ( %d / +%d) %c", intLeft, playerIntelligence, intMod(), intRight), y+=2);
+		terminal.writeCenter(String.format("%c %c Strength ( %d / +%d ) %c %c", strDown, strLeft, playerStrength, strMod(), strRight, strUp), y+=3);
+		terminal.writeCenter(String.format("%c %c Dexterity ( %d / +%d ) %c %c", dexDown, dexLeft, playerDexterity, dexMod(), dexRight, dexUp), y+=2);
+		terminal.writeCenter(String.format("%c %c Intelligence ( %d / +%d ) %c %c", intDown, intLeft, playerIntelligence, intMod(), intRight, intUp), y+=2);
 		if(check == 0) {
 			terminal.writeCenter("Strength represents the physical power of your body.", y+=6);
 			terminal.writeCenter("Strength increases the damage dealt by simple and martial weapons,", y+=1);
