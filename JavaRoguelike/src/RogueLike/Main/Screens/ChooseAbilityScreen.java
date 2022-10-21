@@ -39,32 +39,41 @@ public class ChooseAbilityScreen implements Screen{
 			dexRight = ' ';
 			intLeft = ' ';
 			intRight = ' ';
-			if(playerStrength == 8) {
+			if(playerStrength == 8 && abilityPoints > 0) {
 				strUp = '+';
 				strDown = ' ';
-			}else if(playerStrength == 15) {
+			}else if(playerStrength == 15 || (playerStrength > 8 && abilityPoints == 0)) {
 				strUp = ' ';
 				strDown = '-';
+			}else if(abilityPoints == 0) {
+				strUp = ' ';
+				strDown = ' ';
 			}else{
 				strUp = '+';
 				strDown = '-';
 			}
-			if(playerDexterity == 8) {
+			if(playerDexterity == 8 && abilityPoints > 0) {
 				dexUp = '+';
 				dexDown = ' ';
-			}else if(playerDexterity == 15) {
+			}else if(playerDexterity == 15 || (playerDexterity > 8 && abilityPoints == 0)) {
 				dexUp = ' ';
 				dexDown = '-';
+			}else if(abilityPoints == 0) {
+				dexUp = ' ';
+				dexDown = ' ';
 			}else{
 				dexUp = '+';
 				dexDown = '-';
 			}
-			if(playerIntelligence == 8) {
+			if(playerIntelligence == 8 && abilityPoints > 0) {
 				intUp = '+';
 				intDown = ' ';
-			}else if(playerIntelligence == 15) {
+			}else if(playerIntelligence == 15 || (playerIntelligence > 8 && abilityPoints == 0)) {
 				intUp = ' ';
 				intDown = '-';
+			}else if(abilityPoints == 0) {
+				intUp = ' ';
+				intDown = ' ';
 			}else{
 				intUp = '+';
 				intDown = '-';
@@ -76,32 +85,41 @@ public class ChooseAbilityScreen implements Screen{
 			dexRight = '<';
 			intLeft = ' ';
 			intRight = ' ';
-			if(playerStrength == 8) {
+			if(playerStrength == 8 && abilityPoints > 0) {
 				strUp = '+';
 				strDown = ' ';
-			}else if(playerStrength == 15) {
+			}else if(playerStrength == 15 || (playerStrength > 8 && abilityPoints == 0)) {
 				strUp = ' ';
 				strDown = '-';
+			}else if(abilityPoints == 0) {
+				strUp = ' ';
+				strDown = ' ';
 			}else{
 				strUp = '+';
 				strDown = '-';
 			}
-			if(playerDexterity == 8) {
+			if(playerDexterity == 8 && abilityPoints > 0) {
 				dexUp = '+';
 				dexDown = ' ';
-			}else if(playerDexterity == 15) {
+			}else if(playerDexterity == 15 || (playerDexterity > 8 && abilityPoints == 0)) {
 				dexUp = ' ';
 				dexDown = '-';
+			}else if(abilityPoints == 0) {
+				dexUp = ' ';
+				dexDown = ' ';
 			}else{
 				dexUp = '+';
 				dexDown = '-';
 			}
-			if(playerIntelligence == 8) {
+			if(playerIntelligence == 8 && abilityPoints > 0) {
 				intUp = '+';
 				intDown = ' ';
-			}else if(playerIntelligence == 15) {
+			}else if(playerIntelligence == 15 || (playerIntelligence > 8 && abilityPoints == 0)) {
 				intUp = ' ';
 				intDown = '-';
+			}else if(abilityPoints == 0) {
+				intUp = ' ';
+				intDown = ' ';
 			}else{
 				intUp = '+';
 				intDown = '-';
@@ -113,32 +131,41 @@ public class ChooseAbilityScreen implements Screen{
 			dexRight = ' ';
 			intLeft = '>';
 			intRight = '<';
-			if(playerStrength == 8) {
+			if(playerStrength == 8 && abilityPoints > 0) {
 				strUp = '+';
 				strDown = ' ';
-			}else if(playerStrength == 15) {
+			}else if(playerStrength == 15 || (playerStrength > 8 && abilityPoints == 0)) {
 				strUp = ' ';
 				strDown = '-';
+			}else if(abilityPoints == 0) {
+				strUp = ' ';
+				strDown = ' ';
 			}else{
 				strUp = '+';
 				strDown = '-';
 			}
-			if(playerDexterity == 8) {
+			if(playerDexterity == 8 && abilityPoints > 0) {
 				dexUp = '+';
 				dexDown = ' ';
-			}else if(playerDexterity == 15) {
+			}else if(playerDexterity == 15 || (playerDexterity > 8 && abilityPoints == 0)) {
 				dexUp = ' ';
 				dexDown = '-';
+			}else if(abilityPoints == 0) {
+				dexUp = ' ';
+				dexDown = ' ';
 			}else{
 				dexUp = '+';
 				dexDown = '-';
 			}
-			if(playerIntelligence == 8) {
+			if(playerIntelligence == 8 && abilityPoints > 0) {
 				intUp = '+';
 				intDown = ' ';
-			}else if(playerIntelligence == 15) {
+			}else if(playerIntelligence == 15 || (playerIntelligence > 8 && abilityPoints == 0)) {
 				intUp = ' ';
 				intDown = '-';
+			}else if(abilityPoints == 0) {
+				intUp = ' ';
+				intDown = ' ';
 			}else{
 				intUp = '+';
 				intDown = '-';

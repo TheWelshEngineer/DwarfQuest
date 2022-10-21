@@ -93,6 +93,31 @@ public class PlayerLevelUpSkillsScreen implements Screen{
 	public char alchLeft = '>';
 	public char alchRight = '<';
 	
+	public char simpleUp = '+';
+	public char simpleDown = '-';
+	public char martialUp = '+';
+	public char martialDown = '-';
+	public char finesseUp = '+';
+	public char finesseDown = '-';
+	public char rangedUp = '+';
+	public char rangedDown = '-';
+	public char fortitudeUp = '+';
+	public char fortitudeDown = '-';
+	public char percepUp = '+';
+	public char percepDown = '-';
+	public char stealthUp = '+';
+	public char stealthDown = '-';
+	public char evoUp = '+';
+	public char evoDown = '-';
+	public char pyroUp = '+';
+	public char pyroDown = '-';
+	public char cryoUp = '+';
+	public char cryoDown = '-';
+	public char electroUp = '+';
+	public char electroDown = '-';
+	public char alchUp = '+';
+	public char alchDown = '-';
+	
 	public void changeMarkers(int check) {
 		if(check == 0) {
 			simpleLeft = '>';
@@ -119,6 +144,162 @@ public class PlayerLevelUpSkillsScreen implements Screen{
 			electroRight = ' ';
 			alchLeft = ' ';
 			alchRight = ' ';
+			if(playerSimpleWeapons == player.skillSimpleWeapons() && points > 0) {
+				simpleUp = '+';
+				simpleDown = ' ';
+			}else if(points == 0 && playerSimpleWeapons > player.skillSimpleWeapons()) {
+				simpleUp = ' ';
+				simpleDown = '-';
+			}else if(points == 0) {
+				simpleUp = ' ';
+				simpleDown = ' ';
+			}else {
+				simpleUp = '+';
+				simpleDown = '-';
+			}
+			if(playerMartialWeapons == player.skillMartialWeapons() && points > 0) {
+				martialUp = '+';
+				martialDown = ' ';
+			}else if(points == 0 && playerMartialWeapons > player.skillMartialWeapons()) {
+				martialUp = ' ';
+				martialDown = '-';
+			}else if(points == 0) {
+				martialUp = ' ';
+				martialDown = ' ';
+			}else {
+				martialUp = '+';
+				martialDown = '-';
+			}
+			if(playerFinesseWeapons == player.skillFinesseWeapons() && points > 0) {
+				finesseUp = '+';
+				finesseDown = ' ';
+			}else if(points == 0 && playerFinesseWeapons > player.skillFinesseWeapons()) {
+				finesseUp = ' ';
+				finesseDown = '-';
+			}else if(points == 0) {
+				finesseUp = ' ';
+				finesseDown = ' ';
+			}else {
+				finesseUp = '+';
+				finesseDown = '-';
+			}
+			if(playerRangedWeapons == player.skillRangedWeapons() && points > 0) {
+				rangedUp = '+';
+				rangedDown = ' ';
+			}else if(points == 0 && playerRangedWeapons > player.skillRangedWeapons()) {
+				rangedUp = ' ';
+				rangedDown = '-';
+			}else if(points == 0) {
+				rangedUp = ' ';
+				rangedDown = ' ';
+			}else {
+				rangedUp = '+';
+				rangedDown = '-';
+			}
+			if(playerFortitude == player.skillFortitude() && points > 0) {
+				fortitudeUp = '+';
+				fortitudeDown = ' ';
+			}else if(points == 0 && playerFortitude > player.skillFortitude()) {
+				fortitudeUp = ' ';
+				fortitudeDown = '-';
+			}else if(points == 0) {
+				fortitudeUp = ' ';
+				fortitudeDown = ' ';
+			}else {
+				fortitudeUp = '+';
+				fortitudeDown = '-';
+			}
+			if(playerPerception == player.skillPerception() && points > 0) {
+				percepUp = '+';
+				percepDown = ' ';
+			}else if(points == 0 && playerPerception > player.skillPerception()) {
+				percepUp = ' ';
+				percepDown = '-';
+			}else if(points == 0) {
+				percepUp = ' ';
+				percepDown = ' ';
+			}else {
+				percepUp = '+';
+				percepDown = '-';
+			}
+			if(playerStealth == player.skillStealth() && points > 0) {
+				stealthUp = '+';
+				stealthDown = ' ';
+			}else if(points == 0 && playerStealth > player.skillStealth()) {
+				stealthUp = ' ';
+				stealthDown = '-';
+			}else if(points == 0) {
+				stealthUp = ' ';
+				stealthDown = ' ';
+			}else {
+				stealthUp = '+';
+				stealthDown = '-';
+			}
+			if(playerEvocation == player.skillEvocation() && points > 0) {
+				evoUp = '+';
+				evoDown = ' ';
+			}else if(points == 0 && playerEvocation > player.skillEvocation()) {
+				evoUp = ' ';
+				evoDown = '-';
+			}else if(points == 0) {
+				evoUp = ' ';
+				evoDown = ' ';
+			}else {
+				evoUp = '+';
+				evoDown = '-';
+			}
+			if(playerPyromancy == player.skillPyromancy() && points > 0) {
+				pyroUp = '+';
+				pyroDown = ' ';
+			}else if(points == 0 && playerPyromancy > player.skillPyromancy()) {
+				pyroUp = ' ';
+				pyroDown = '-';
+			}else if(points == 0) {
+				pyroUp = ' ';
+				pyroDown = ' ';
+			}else {
+				pyroUp = '+';
+				pyroDown = '-';
+			}
+			if(playerCryomancy == player.skillCryomancy() && points > 0) {
+				cryoUp = '+';
+				cryoDown = ' ';
+			}else if(points == 0 && playerCryomancy > player.skillCryomancy()) {
+				cryoUp = ' ';
+				cryoDown = '-';
+			}else if(points == 0) {
+				cryoUp = ' ';
+				cryoDown = ' ';
+			}else {
+				cryoUp = '+';
+				cryoDown = '-';
+			}
+			if(playerElectromancy == player.skillElectromancy() && points > 0) {
+				electroUp = '+';
+				electroDown = ' ';
+			}else if(points == 0 && playerElectromancy > player.skillElectromancy()) {
+				electroUp = ' ';
+				electroDown = '-';
+			}else if(points == 0) {
+				electroUp = ' ';
+				electroDown = ' ';
+			}else {
+				electroUp = '+';
+				electroDown = '-';
+			}
+			if(playerAlchemancy == player.skillAlchemancy() && points > 0) {
+				alchUp = '+';
+				alchDown = ' ';
+			}else if(points == 0 && playerAlchemancy > player.skillAlchemancy()) {
+				alchUp = ' ';
+				alchDown = '-';
+			}else if(points == 0) {
+				alchUp = ' ';
+				alchDown = ' ';
+			}else {
+				alchUp = '+';
+				alchDown = '-';
+			}
 		}else if(check == 1) {
 			simpleLeft = ' ';
 			simpleRight = ' ';
@@ -144,6 +325,162 @@ public class PlayerLevelUpSkillsScreen implements Screen{
 			electroRight = ' ';
 			alchLeft = ' ';
 			alchRight = ' ';
+			if(playerSimpleWeapons == player.skillSimpleWeapons() && points > 0) {
+				simpleUp = '+';
+				simpleDown = ' ';
+			}else if(points == 0 && playerSimpleWeapons > player.skillSimpleWeapons()) {
+				simpleUp = ' ';
+				simpleDown = '-';
+			}else if(points == 0) {
+				simpleUp = ' ';
+				simpleDown = ' ';
+			}else {
+				simpleUp = '+';
+				simpleDown = '-';
+			}
+			if(playerMartialWeapons == player.skillMartialWeapons() && points > 0) {
+				martialUp = '+';
+				martialDown = ' ';
+			}else if(points == 0 && playerMartialWeapons > player.skillMartialWeapons()) {
+				martialUp = ' ';
+				martialDown = '-';
+			}else if(points == 0) {
+				martialUp = ' ';
+				martialDown = ' ';
+			}else {
+				martialUp = '+';
+				martialDown = '-';
+			}
+			if(playerFinesseWeapons == player.skillFinesseWeapons() && points > 0) {
+				finesseUp = '+';
+				finesseDown = ' ';
+			}else if(points == 0 && playerFinesseWeapons > player.skillFinesseWeapons()) {
+				finesseUp = ' ';
+				finesseDown = '-';
+			}else if(points == 0) {
+				finesseUp = ' ';
+				finesseDown = ' ';
+			}else {
+				finesseUp = '+';
+				finesseDown = '-';
+			}
+			if(playerRangedWeapons == player.skillRangedWeapons() && points > 0) {
+				rangedUp = '+';
+				rangedDown = ' ';
+			}else if(points == 0 && playerRangedWeapons > player.skillRangedWeapons()) {
+				rangedUp = ' ';
+				rangedDown = '-';
+			}else if(points == 0) {
+				rangedUp = ' ';
+				rangedDown = ' ';
+			}else {
+				rangedUp = '+';
+				rangedDown = '-';
+			}
+			if(playerFortitude == player.skillFortitude() && points > 0) {
+				fortitudeUp = '+';
+				fortitudeDown = ' ';
+			}else if(points == 0 && playerFortitude > player.skillFortitude()) {
+				fortitudeUp = ' ';
+				fortitudeDown = '-';
+			}else if(points == 0) {
+				fortitudeUp = ' ';
+				fortitudeDown = ' ';
+			}else {
+				fortitudeUp = '+';
+				fortitudeDown = '-';
+			}
+			if(playerPerception == player.skillPerception() && points > 0) {
+				percepUp = '+';
+				percepDown = ' ';
+			}else if(points == 0 && playerPerception > player.skillPerception()) {
+				percepUp = ' ';
+				percepDown = '-';
+			}else if(points == 0) {
+				percepUp = ' ';
+				percepDown = ' ';
+			}else {
+				percepUp = '+';
+				percepDown = '-';
+			}
+			if(playerStealth == player.skillStealth() && points > 0) {
+				stealthUp = '+';
+				stealthDown = ' ';
+			}else if(points == 0 && playerStealth > player.skillStealth()) {
+				stealthUp = ' ';
+				stealthDown = '-';
+			}else if(points == 0) {
+				stealthUp = ' ';
+				stealthDown = ' ';
+			}else {
+				stealthUp = '+';
+				stealthDown = '-';
+			}
+			if(playerEvocation == player.skillEvocation() && points > 0) {
+				evoUp = '+';
+				evoDown = ' ';
+			}else if(points == 0 && playerEvocation > player.skillEvocation()) {
+				evoUp = ' ';
+				evoDown = '-';
+			}else if(points == 0) {
+				evoUp = ' ';
+				evoDown = ' ';
+			}else {
+				evoUp = '+';
+				evoDown = '-';
+			}
+			if(playerPyromancy == player.skillPyromancy() && points > 0) {
+				pyroUp = '+';
+				pyroDown = ' ';
+			}else if(points == 0 && playerPyromancy > player.skillPyromancy()) {
+				pyroUp = ' ';
+				pyroDown = '-';
+			}else if(points == 0) {
+				pyroUp = ' ';
+				pyroDown = ' ';
+			}else {
+				pyroUp = '+';
+				pyroDown = '-';
+			}
+			if(playerCryomancy == player.skillCryomancy() && points > 0) {
+				cryoUp = '+';
+				cryoDown = ' ';
+			}else if(points == 0 && playerCryomancy > player.skillCryomancy()) {
+				cryoUp = ' ';
+				cryoDown = '-';
+			}else if(points == 0) {
+				cryoUp = ' ';
+				cryoDown = ' ';
+			}else {
+				cryoUp = '+';
+				cryoDown = '-';
+			}
+			if(playerElectromancy == player.skillElectromancy() && points > 0) {
+				electroUp = '+';
+				electroDown = ' ';
+			}else if(points == 0 && playerElectromancy > player.skillElectromancy()) {
+				electroUp = ' ';
+				electroDown = '-';
+			}else if(points == 0) {
+				electroUp = ' ';
+				electroDown = ' ';
+			}else {
+				electroUp = '+';
+				electroDown = '-';
+			}
+			if(playerAlchemancy == player.skillAlchemancy() && points > 0) {
+				alchUp = '+';
+				alchDown = ' ';
+			}else if(points == 0 && playerAlchemancy > player.skillAlchemancy()) {
+				alchUp = ' ';
+				alchDown = '-';
+			}else if(points == 0) {
+				alchUp = ' ';
+				alchDown = ' ';
+			}else {
+				alchUp = '+';
+				alchDown = '-';
+			}
 		}else if(check == 2) {
 			simpleLeft = ' ';
 			simpleRight = ' ';
@@ -169,6 +506,162 @@ public class PlayerLevelUpSkillsScreen implements Screen{
 			electroRight = ' ';
 			alchLeft = ' ';
 			alchRight = ' ';
+			if(playerSimpleWeapons == player.skillSimpleWeapons() && points > 0) {
+				simpleUp = '+';
+				simpleDown = ' ';
+			}else if(points == 0 && playerSimpleWeapons > player.skillSimpleWeapons()) {
+				simpleUp = ' ';
+				simpleDown = '-';
+			}else if(points == 0) {
+				simpleUp = ' ';
+				simpleDown = ' ';
+			}else {
+				simpleUp = '+';
+				simpleDown = '-';
+			}
+			if(playerMartialWeapons == player.skillMartialWeapons() && points > 0) {
+				martialUp = '+';
+				martialDown = ' ';
+			}else if(points == 0 && playerMartialWeapons > player.skillMartialWeapons()) {
+				martialUp = ' ';
+				martialDown = '-';
+			}else if(points == 0) {
+				martialUp = ' ';
+				martialDown = ' ';
+			}else {
+				martialUp = '+';
+				martialDown = '-';
+			}
+			if(playerFinesseWeapons == player.skillFinesseWeapons() && points > 0) {
+				finesseUp = '+';
+				finesseDown = ' ';
+			}else if(points == 0 && playerFinesseWeapons > player.skillFinesseWeapons()) {
+				finesseUp = ' ';
+				finesseDown = '-';
+			}else if(points == 0) {
+				finesseUp = ' ';
+				finesseDown = ' ';
+			}else {
+				finesseUp = '+';
+				finesseDown = '-';
+			}
+			if(playerRangedWeapons == player.skillRangedWeapons() && points > 0) {
+				rangedUp = '+';
+				rangedDown = ' ';
+			}else if(points == 0 && playerRangedWeapons > player.skillRangedWeapons()) {
+				rangedUp = ' ';
+				rangedDown = '-';
+			}else if(points == 0) {
+				rangedUp = ' ';
+				rangedDown = ' ';
+			}else {
+				rangedUp = '+';
+				rangedDown = '-';
+			}
+			if(playerFortitude == player.skillFortitude() && points > 0) {
+				fortitudeUp = '+';
+				fortitudeDown = ' ';
+			}else if(points == 0 && playerFortitude > player.skillFortitude()) {
+				fortitudeUp = ' ';
+				fortitudeDown = '-';
+			}else if(points == 0) {
+				fortitudeUp = ' ';
+				fortitudeDown = ' ';
+			}else {
+				fortitudeUp = '+';
+				fortitudeDown = '-';
+			}
+			if(playerPerception == player.skillPerception() && points > 0) {
+				percepUp = '+';
+				percepDown = ' ';
+			}else if(points == 0 && playerPerception > player.skillPerception()) {
+				percepUp = ' ';
+				percepDown = '-';
+			}else if(points == 0) {
+				percepUp = ' ';
+				percepDown = ' ';
+			}else {
+				percepUp = '+';
+				percepDown = '-';
+			}
+			if(playerStealth == player.skillStealth() && points > 0) {
+				stealthUp = '+';
+				stealthDown = ' ';
+			}else if(points == 0 && playerStealth > player.skillStealth()) {
+				stealthUp = ' ';
+				stealthDown = '-';
+			}else if(points == 0) {
+				stealthUp = ' ';
+				stealthDown = ' ';
+			}else {
+				stealthUp = '+';
+				stealthDown = '-';
+			}
+			if(playerEvocation == player.skillEvocation() && points > 0) {
+				evoUp = '+';
+				evoDown = ' ';
+			}else if(points == 0 && playerEvocation > player.skillEvocation()) {
+				evoUp = ' ';
+				evoDown = '-';
+			}else if(points == 0) {
+				evoUp = ' ';
+				evoDown = ' ';
+			}else {
+				evoUp = '+';
+				evoDown = '-';
+			}
+			if(playerPyromancy == player.skillPyromancy() && points > 0) {
+				pyroUp = '+';
+				pyroDown = ' ';
+			}else if(points == 0 && playerPyromancy > player.skillPyromancy()) {
+				pyroUp = ' ';
+				pyroDown = '-';
+			}else if(points == 0) {
+				pyroUp = ' ';
+				pyroDown = ' ';
+			}else {
+				pyroUp = '+';
+				pyroDown = '-';
+			}
+			if(playerCryomancy == player.skillCryomancy() && points > 0) {
+				cryoUp = '+';
+				cryoDown = ' ';
+			}else if(points == 0 && playerCryomancy > player.skillCryomancy()) {
+				cryoUp = ' ';
+				cryoDown = '-';
+			}else if(points == 0) {
+				cryoUp = ' ';
+				cryoDown = ' ';
+			}else {
+				cryoUp = '+';
+				cryoDown = '-';
+			}
+			if(playerElectromancy == player.skillElectromancy() && points > 0) {
+				electroUp = '+';
+				electroDown = ' ';
+			}else if(points == 0 && playerElectromancy > player.skillElectromancy()) {
+				electroUp = ' ';
+				electroDown = '-';
+			}else if(points == 0) {
+				electroUp = ' ';
+				electroDown = ' ';
+			}else {
+				electroUp = '+';
+				electroDown = '-';
+			}
+			if(playerAlchemancy == player.skillAlchemancy() && points > 0) {
+				alchUp = '+';
+				alchDown = ' ';
+			}else if(points == 0 && playerAlchemancy > player.skillAlchemancy()) {
+				alchUp = ' ';
+				alchDown = '-';
+			}else if(points == 0) {
+				alchUp = ' ';
+				alchDown = ' ';
+			}else {
+				alchUp = '+';
+				alchDown = '-';
+			}
 		}else if(check == 3) {
 			simpleLeft = ' ';
 			simpleRight = ' ';
@@ -194,6 +687,162 @@ public class PlayerLevelUpSkillsScreen implements Screen{
 			electroRight = ' ';
 			alchLeft = ' ';
 			alchRight = ' ';
+			if(playerSimpleWeapons == player.skillSimpleWeapons() && points > 0) {
+				simpleUp = '+';
+				simpleDown = ' ';
+			}else if(points == 0 && playerSimpleWeapons > player.skillSimpleWeapons()) {
+				simpleUp = ' ';
+				simpleDown = '-';
+			}else if(points == 0) {
+				simpleUp = ' ';
+				simpleDown = ' ';
+			}else {
+				simpleUp = '+';
+				simpleDown = '-';
+			}
+			if(playerMartialWeapons == player.skillMartialWeapons() && points > 0) {
+				martialUp = '+';
+				martialDown = ' ';
+			}else if(points == 0 && playerMartialWeapons > player.skillMartialWeapons()) {
+				martialUp = ' ';
+				martialDown = '-';
+			}else if(points == 0) {
+				martialUp = ' ';
+				martialDown = ' ';
+			}else {
+				martialUp = '+';
+				martialDown = '-';
+			}
+			if(playerFinesseWeapons == player.skillFinesseWeapons() && points > 0) {
+				finesseUp = '+';
+				finesseDown = ' ';
+			}else if(points == 0 && playerFinesseWeapons > player.skillFinesseWeapons()) {
+				finesseUp = ' ';
+				finesseDown = '-';
+			}else if(points == 0) {
+				finesseUp = ' ';
+				finesseDown = ' ';
+			}else {
+				finesseUp = '+';
+				finesseDown = '-';
+			}
+			if(playerRangedWeapons == player.skillRangedWeapons() && points > 0) {
+				rangedUp = '+';
+				rangedDown = ' ';
+			}else if(points == 0 && playerRangedWeapons > player.skillRangedWeapons()) {
+				rangedUp = ' ';
+				rangedDown = '-';
+			}else if(points == 0) {
+				rangedUp = ' ';
+				rangedDown = ' ';
+			}else {
+				rangedUp = '+';
+				rangedDown = '-';
+			}
+			if(playerFortitude == player.skillFortitude() && points > 0) {
+				fortitudeUp = '+';
+				fortitudeDown = ' ';
+			}else if(points == 0 && playerFortitude > player.skillFortitude()) {
+				fortitudeUp = ' ';
+				fortitudeDown = '-';
+			}else if(points == 0) {
+				fortitudeUp = ' ';
+				fortitudeDown = ' ';
+			}else {
+				fortitudeUp = '+';
+				fortitudeDown = '-';
+			}
+			if(playerPerception == player.skillPerception() && points > 0) {
+				percepUp = '+';
+				percepDown = ' ';
+			}else if(points == 0 && playerPerception > player.skillPerception()) {
+				percepUp = ' ';
+				percepDown = '-';
+			}else if(points == 0) {
+				percepUp = ' ';
+				percepDown = ' ';
+			}else {
+				percepUp = '+';
+				percepDown = '-';
+			}
+			if(playerStealth == player.skillStealth() && points > 0) {
+				stealthUp = '+';
+				stealthDown = ' ';
+			}else if(points == 0 && playerStealth > player.skillStealth()) {
+				stealthUp = ' ';
+				stealthDown = '-';
+			}else if(points == 0) {
+				stealthUp = ' ';
+				stealthDown = ' ';
+			}else {
+				stealthUp = '+';
+				stealthDown = '-';
+			}
+			if(playerEvocation == player.skillEvocation() && points > 0) {
+				evoUp = '+';
+				evoDown = ' ';
+			}else if(points == 0 && playerEvocation > player.skillEvocation()) {
+				evoUp = ' ';
+				evoDown = '-';
+			}else if(points == 0) {
+				evoUp = ' ';
+				evoDown = ' ';
+			}else {
+				evoUp = '+';
+				evoDown = '-';
+			}
+			if(playerPyromancy == player.skillPyromancy() && points > 0) {
+				pyroUp = '+';
+				pyroDown = ' ';
+			}else if(points == 0 && playerPyromancy > player.skillPyromancy()) {
+				pyroUp = ' ';
+				pyroDown = '-';
+			}else if(points == 0) {
+				pyroUp = ' ';
+				pyroDown = ' ';
+			}else {
+				pyroUp = '+';
+				pyroDown = '-';
+			}
+			if(playerCryomancy == player.skillCryomancy() && points > 0) {
+				cryoUp = '+';
+				cryoDown = ' ';
+			}else if(points == 0 && playerCryomancy > player.skillCryomancy()) {
+				cryoUp = ' ';
+				cryoDown = '-';
+			}else if(points == 0) {
+				cryoUp = ' ';
+				cryoDown = ' ';
+			}else {
+				cryoUp = '+';
+				cryoDown = '-';
+			}
+			if(playerElectromancy == player.skillElectromancy() && points > 0) {
+				electroUp = '+';
+				electroDown = ' ';
+			}else if(points == 0 && playerElectromancy > player.skillElectromancy()) {
+				electroUp = ' ';
+				electroDown = '-';
+			}else if(points == 0) {
+				electroUp = ' ';
+				electroDown = ' ';
+			}else {
+				electroUp = '+';
+				electroDown = '-';
+			}
+			if(playerAlchemancy == player.skillAlchemancy() && points > 0) {
+				alchUp = '+';
+				alchDown = ' ';
+			}else if(points == 0 && playerAlchemancy > player.skillAlchemancy()) {
+				alchUp = ' ';
+				alchDown = '-';
+			}else if(points == 0) {
+				alchUp = ' ';
+				alchDown = ' ';
+			}else {
+				alchUp = '+';
+				alchDown = '-';
+			}
 		}else if(check == 4) {
 			simpleLeft = ' ';
 			simpleRight = ' ';
@@ -219,6 +868,162 @@ public class PlayerLevelUpSkillsScreen implements Screen{
 			electroRight = ' ';
 			alchLeft = ' ';
 			alchRight = ' ';
+			if(playerSimpleWeapons == player.skillSimpleWeapons() && points > 0) {
+				simpleUp = '+';
+				simpleDown = ' ';
+			}else if(points == 0 && playerSimpleWeapons > player.skillSimpleWeapons()) {
+				simpleUp = ' ';
+				simpleDown = '-';
+			}else if(points == 0) {
+				simpleUp = ' ';
+				simpleDown = ' ';
+			}else {
+				simpleUp = '+';
+				simpleDown = '-';
+			}
+			if(playerMartialWeapons == player.skillMartialWeapons() && points > 0) {
+				martialUp = '+';
+				martialDown = ' ';
+			}else if(points == 0 && playerMartialWeapons > player.skillMartialWeapons()) {
+				martialUp = ' ';
+				martialDown = '-';
+			}else if(points == 0) {
+				martialUp = ' ';
+				martialDown = ' ';
+			}else {
+				martialUp = '+';
+				martialDown = '-';
+			}
+			if(playerFinesseWeapons == player.skillFinesseWeapons() && points > 0) {
+				finesseUp = '+';
+				finesseDown = ' ';
+			}else if(points == 0 && playerFinesseWeapons > player.skillFinesseWeapons()) {
+				finesseUp = ' ';
+				finesseDown = '-';
+			}else if(points == 0) {
+				finesseUp = ' ';
+				finesseDown = ' ';
+			}else {
+				finesseUp = '+';
+				finesseDown = '-';
+			}
+			if(playerRangedWeapons == player.skillRangedWeapons() && points > 0) {
+				rangedUp = '+';
+				rangedDown = ' ';
+			}else if(points == 0 && playerRangedWeapons > player.skillRangedWeapons()) {
+				rangedUp = ' ';
+				rangedDown = '-';
+			}else if(points == 0) {
+				rangedUp = ' ';
+				rangedDown = ' ';
+			}else {
+				rangedUp = '+';
+				rangedDown = '-';
+			}
+			if(playerFortitude == player.skillFortitude() && points > 0) {
+				fortitudeUp = '+';
+				fortitudeDown = ' ';
+			}else if(points == 0 && playerFortitude > player.skillFortitude()) {
+				fortitudeUp = ' ';
+				fortitudeDown = '-';
+			}else if(points == 0) {
+				fortitudeUp = ' ';
+				fortitudeDown = ' ';
+			}else {
+				fortitudeUp = '+';
+				fortitudeDown = '-';
+			}
+			if(playerPerception == player.skillPerception() && points > 0) {
+				percepUp = '+';
+				percepDown = ' ';
+			}else if(points == 0 && playerPerception > player.skillPerception()) {
+				percepUp = ' ';
+				percepDown = '-';
+			}else if(points == 0) {
+				percepUp = ' ';
+				percepDown = ' ';
+			}else {
+				percepUp = '+';
+				percepDown = '-';
+			}
+			if(playerStealth == player.skillStealth() && points > 0) {
+				stealthUp = '+';
+				stealthDown = ' ';
+			}else if(points == 0 && playerStealth > player.skillStealth()) {
+				stealthUp = ' ';
+				stealthDown = '-';
+			}else if(points == 0) {
+				stealthUp = ' ';
+				stealthDown = ' ';
+			}else {
+				stealthUp = '+';
+				stealthDown = '-';
+			}
+			if(playerEvocation == player.skillEvocation() && points > 0) {
+				evoUp = '+';
+				evoDown = ' ';
+			}else if(points == 0 && playerEvocation > player.skillEvocation()) {
+				evoUp = ' ';
+				evoDown = '-';
+			}else if(points == 0) {
+				evoUp = ' ';
+				evoDown = ' ';
+			}else {
+				evoUp = '+';
+				evoDown = '-';
+			}
+			if(playerPyromancy == player.skillPyromancy() && points > 0) {
+				pyroUp = '+';
+				pyroDown = ' ';
+			}else if(points == 0 && playerPyromancy > player.skillPyromancy()) {
+				pyroUp = ' ';
+				pyroDown = '-';
+			}else if(points == 0) {
+				pyroUp = ' ';
+				pyroDown = ' ';
+			}else {
+				pyroUp = '+';
+				pyroDown = '-';
+			}
+			if(playerCryomancy == player.skillCryomancy() && points > 0) {
+				cryoUp = '+';
+				cryoDown = ' ';
+			}else if(points == 0 && playerCryomancy > player.skillCryomancy()) {
+				cryoUp = ' ';
+				cryoDown = '-';
+			}else if(points == 0) {
+				cryoUp = ' ';
+				cryoDown = ' ';
+			}else {
+				cryoUp = '+';
+				cryoDown = '-';
+			}
+			if(playerElectromancy == player.skillElectromancy() && points > 0) {
+				electroUp = '+';
+				electroDown = ' ';
+			}else if(points == 0 && playerElectromancy > player.skillElectromancy()) {
+				electroUp = ' ';
+				electroDown = '-';
+			}else if(points == 0) {
+				electroUp = ' ';
+				electroDown = ' ';
+			}else {
+				electroUp = '+';
+				electroDown = '-';
+			}
+			if(playerAlchemancy == player.skillAlchemancy() && points > 0) {
+				alchUp = '+';
+				alchDown = ' ';
+			}else if(points == 0 && playerAlchemancy > player.skillAlchemancy()) {
+				alchUp = ' ';
+				alchDown = '-';
+			}else if(points == 0) {
+				alchUp = ' ';
+				alchDown = ' ';
+			}else {
+				alchUp = '+';
+				alchDown = '-';
+			}
 		}else if(check == 5) {
 			simpleLeft = ' ';
 			simpleRight = ' ';
@@ -244,6 +1049,162 @@ public class PlayerLevelUpSkillsScreen implements Screen{
 			electroRight = ' ';
 			alchLeft = ' ';
 			alchRight = ' ';
+			if(playerSimpleWeapons == player.skillSimpleWeapons() && points > 0) {
+				simpleUp = '+';
+				simpleDown = ' ';
+			}else if(points == 0 && playerSimpleWeapons > player.skillSimpleWeapons()) {
+				simpleUp = ' ';
+				simpleDown = '-';
+			}else if(points == 0) {
+				simpleUp = ' ';
+				simpleDown = ' ';
+			}else {
+				simpleUp = '+';
+				simpleDown = '-';
+			}
+			if(playerMartialWeapons == player.skillMartialWeapons() && points > 0) {
+				martialUp = '+';
+				martialDown = ' ';
+			}else if(points == 0 && playerMartialWeapons > player.skillMartialWeapons()) {
+				martialUp = ' ';
+				martialDown = '-';
+			}else if(points == 0) {
+				martialUp = ' ';
+				martialDown = ' ';
+			}else {
+				martialUp = '+';
+				martialDown = '-';
+			}
+			if(playerFinesseWeapons == player.skillFinesseWeapons() && points > 0) {
+				finesseUp = '+';
+				finesseDown = ' ';
+			}else if(points == 0 && playerFinesseWeapons > player.skillFinesseWeapons()) {
+				finesseUp = ' ';
+				finesseDown = '-';
+			}else if(points == 0) {
+				finesseUp = ' ';
+				finesseDown = ' ';
+			}else {
+				finesseUp = '+';
+				finesseDown = '-';
+			}
+			if(playerRangedWeapons == player.skillRangedWeapons() && points > 0) {
+				rangedUp = '+';
+				rangedDown = ' ';
+			}else if(points == 0 && playerRangedWeapons > player.skillRangedWeapons()) {
+				rangedUp = ' ';
+				rangedDown = '-';
+			}else if(points == 0) {
+				rangedUp = ' ';
+				rangedDown = ' ';
+			}else {
+				rangedUp = '+';
+				rangedDown = '-';
+			}
+			if(playerFortitude == player.skillFortitude() && points > 0) {
+				fortitudeUp = '+';
+				fortitudeDown = ' ';
+			}else if(points == 0 && playerFortitude > player.skillFortitude()) {
+				fortitudeUp = ' ';
+				fortitudeDown = '-';
+			}else if(points == 0) {
+				fortitudeUp = ' ';
+				fortitudeDown = ' ';
+			}else {
+				fortitudeUp = '+';
+				fortitudeDown = '-';
+			}
+			if(playerPerception == player.skillPerception() && points > 0) {
+				percepUp = '+';
+				percepDown = ' ';
+			}else if(points == 0 && playerPerception > player.skillPerception()) {
+				percepUp = ' ';
+				percepDown = '-';
+			}else if(points == 0) {
+				percepUp = ' ';
+				percepDown = ' ';
+			}else {
+				percepUp = '+';
+				percepDown = '-';
+			}
+			if(playerStealth == player.skillStealth() && points > 0) {
+				stealthUp = '+';
+				stealthDown = ' ';
+			}else if(points == 0 && playerStealth > player.skillStealth()) {
+				stealthUp = ' ';
+				stealthDown = '-';
+			}else if(points == 0) {
+				stealthUp = ' ';
+				stealthDown = ' ';
+			}else {
+				stealthUp = '+';
+				stealthDown = '-';
+			}
+			if(playerEvocation == player.skillEvocation() && points > 0) {
+				evoUp = '+';
+				evoDown = ' ';
+			}else if(points == 0 && playerEvocation > player.skillEvocation()) {
+				evoUp = ' ';
+				evoDown = '-';
+			}else if(points == 0) {
+				evoUp = ' ';
+				evoDown = ' ';
+			}else {
+				evoUp = '+';
+				evoDown = '-';
+			}
+			if(playerPyromancy == player.skillPyromancy() && points > 0) {
+				pyroUp = '+';
+				pyroDown = ' ';
+			}else if(points == 0 && playerPyromancy > player.skillPyromancy()) {
+				pyroUp = ' ';
+				pyroDown = '-';
+			}else if(points == 0) {
+				pyroUp = ' ';
+				pyroDown = ' ';
+			}else {
+				pyroUp = '+';
+				pyroDown = '-';
+			}
+			if(playerCryomancy == player.skillCryomancy() && points > 0) {
+				cryoUp = '+';
+				cryoDown = ' ';
+			}else if(points == 0 && playerCryomancy > player.skillCryomancy()) {
+				cryoUp = ' ';
+				cryoDown = '-';
+			}else if(points == 0) {
+				cryoUp = ' ';
+				cryoDown = ' ';
+			}else {
+				cryoUp = '+';
+				cryoDown = '-';
+			}
+			if(playerElectromancy == player.skillElectromancy() && points > 0) {
+				electroUp = '+';
+				electroDown = ' ';
+			}else if(points == 0 && playerElectromancy > player.skillElectromancy()) {
+				electroUp = ' ';
+				electroDown = '-';
+			}else if(points == 0) {
+				electroUp = ' ';
+				electroDown = ' ';
+			}else {
+				electroUp = '+';
+				electroDown = '-';
+			}
+			if(playerAlchemancy == player.skillAlchemancy() && points > 0) {
+				alchUp = '+';
+				alchDown = ' ';
+			}else if(points == 0 && playerAlchemancy > player.skillAlchemancy()) {
+				alchUp = ' ';
+				alchDown = '-';
+			}else if(points == 0) {
+				alchUp = ' ';
+				alchDown = ' ';
+			}else {
+				alchUp = '+';
+				alchDown = '-';
+			}
 		}else if(check == 6) {
 			simpleLeft = ' ';
 			simpleRight = ' ';
@@ -269,6 +1230,162 @@ public class PlayerLevelUpSkillsScreen implements Screen{
 			electroRight = ' ';
 			alchLeft = ' ';
 			alchRight = ' ';
+			if(playerSimpleWeapons == player.skillSimpleWeapons() && points > 0) {
+				simpleUp = '+';
+				simpleDown = ' ';
+			}else if(points == 0 && playerSimpleWeapons > player.skillSimpleWeapons()) {
+				simpleUp = ' ';
+				simpleDown = '-';
+			}else if(points == 0) {
+				simpleUp = ' ';
+				simpleDown = ' ';
+			}else {
+				simpleUp = '+';
+				simpleDown = '-';
+			}
+			if(playerMartialWeapons == player.skillMartialWeapons() && points > 0) {
+				martialUp = '+';
+				martialDown = ' ';
+			}else if(points == 0 && playerMartialWeapons > player.skillMartialWeapons()) {
+				martialUp = ' ';
+				martialDown = '-';
+			}else if(points == 0) {
+				martialUp = ' ';
+				martialDown = ' ';
+			}else {
+				martialUp = '+';
+				martialDown = '-';
+			}
+			if(playerFinesseWeapons == player.skillFinesseWeapons() && points > 0) {
+				finesseUp = '+';
+				finesseDown = ' ';
+			}else if(points == 0 && playerFinesseWeapons > player.skillFinesseWeapons()) {
+				finesseUp = ' ';
+				finesseDown = '-';
+			}else if(points == 0) {
+				finesseUp = ' ';
+				finesseDown = ' ';
+			}else {
+				finesseUp = '+';
+				finesseDown = '-';
+			}
+			if(playerRangedWeapons == player.skillRangedWeapons() && points > 0) {
+				rangedUp = '+';
+				rangedDown = ' ';
+			}else if(points == 0 && playerRangedWeapons > player.skillRangedWeapons()) {
+				rangedUp = ' ';
+				rangedDown = '-';
+			}else if(points == 0) {
+				rangedUp = ' ';
+				rangedDown = ' ';
+			}else {
+				rangedUp = '+';
+				rangedDown = '-';
+			}
+			if(playerFortitude == player.skillFortitude() && points > 0) {
+				fortitudeUp = '+';
+				fortitudeDown = ' ';
+			}else if(points == 0 && playerFortitude > player.skillFortitude()) {
+				fortitudeUp = ' ';
+				fortitudeDown = '-';
+			}else if(points == 0) {
+				fortitudeUp = ' ';
+				fortitudeDown = ' ';
+			}else {
+				fortitudeUp = '+';
+				fortitudeDown = '-';
+			}
+			if(playerPerception == player.skillPerception() && points > 0) {
+				percepUp = '+';
+				percepDown = ' ';
+			}else if(points == 0 && playerPerception > player.skillPerception()) {
+				percepUp = ' ';
+				percepDown = '-';
+			}else if(points == 0) {
+				percepUp = ' ';
+				percepDown = ' ';
+			}else {
+				percepUp = '+';
+				percepDown = '-';
+			}
+			if(playerStealth == player.skillStealth() && points > 0) {
+				stealthUp = '+';
+				stealthDown = ' ';
+			}else if(points == 0 && playerStealth > player.skillStealth()) {
+				stealthUp = ' ';
+				stealthDown = '-';
+			}else if(points == 0) {
+				stealthUp = ' ';
+				stealthDown = ' ';
+			}else {
+				stealthUp = '+';
+				stealthDown = '-';
+			}
+			if(playerEvocation == player.skillEvocation() && points > 0) {
+				evoUp = '+';
+				evoDown = ' ';
+			}else if(points == 0 && playerEvocation > player.skillEvocation()) {
+				evoUp = ' ';
+				evoDown = '-';
+			}else if(points == 0) {
+				evoUp = ' ';
+				evoDown = ' ';
+			}else {
+				evoUp = '+';
+				evoDown = '-';
+			}
+			if(playerPyromancy == player.skillPyromancy() && points > 0) {
+				pyroUp = '+';
+				pyroDown = ' ';
+			}else if(points == 0 && playerPyromancy > player.skillPyromancy()) {
+				pyroUp = ' ';
+				pyroDown = '-';
+			}else if(points == 0) {
+				pyroUp = ' ';
+				pyroDown = ' ';
+			}else {
+				pyroUp = '+';
+				pyroDown = '-';
+			}
+			if(playerCryomancy == player.skillCryomancy() && points > 0) {
+				cryoUp = '+';
+				cryoDown = ' ';
+			}else if(points == 0 && playerCryomancy > player.skillCryomancy()) {
+				cryoUp = ' ';
+				cryoDown = '-';
+			}else if(points == 0) {
+				cryoUp = ' ';
+				cryoDown = ' ';
+			}else {
+				cryoUp = '+';
+				cryoDown = '-';
+			}
+			if(playerElectromancy == player.skillElectromancy() && points > 0) {
+				electroUp = '+';
+				electroDown = ' ';
+			}else if(points == 0 && playerElectromancy > player.skillElectromancy()) {
+				electroUp = ' ';
+				electroDown = '-';
+			}else if(points == 0) {
+				electroUp = ' ';
+				electroDown = ' ';
+			}else {
+				electroUp = '+';
+				electroDown = '-';
+			}
+			if(playerAlchemancy == player.skillAlchemancy() && points > 0) {
+				alchUp = '+';
+				alchDown = ' ';
+			}else if(points == 0 && playerAlchemancy > player.skillAlchemancy()) {
+				alchUp = ' ';
+				alchDown = '-';
+			}else if(points == 0) {
+				alchUp = ' ';
+				alchDown = ' ';
+			}else {
+				alchUp = '+';
+				alchDown = '-';
+			}
 		}else if(check == 7) {
 			simpleLeft = ' ';
 			simpleRight = ' ';
@@ -294,6 +1411,162 @@ public class PlayerLevelUpSkillsScreen implements Screen{
 			electroRight = ' ';
 			alchLeft = ' ';
 			alchRight = ' ';
+			if(playerSimpleWeapons == player.skillSimpleWeapons() && points > 0) {
+				simpleUp = '+';
+				simpleDown = ' ';
+			}else if(points == 0 && playerSimpleWeapons > player.skillSimpleWeapons()) {
+				simpleUp = ' ';
+				simpleDown = '-';
+			}else if(points == 0) {
+				simpleUp = ' ';
+				simpleDown = ' ';
+			}else {
+				simpleUp = '+';
+				simpleDown = '-';
+			}
+			if(playerMartialWeapons == player.skillMartialWeapons() && points > 0) {
+				martialUp = '+';
+				martialDown = ' ';
+			}else if(points == 0 && playerMartialWeapons > player.skillMartialWeapons()) {
+				martialUp = ' ';
+				martialDown = '-';
+			}else if(points == 0) {
+				martialUp = ' ';
+				martialDown = ' ';
+			}else {
+				martialUp = '+';
+				martialDown = '-';
+			}
+			if(playerFinesseWeapons == player.skillFinesseWeapons() && points > 0) {
+				finesseUp = '+';
+				finesseDown = ' ';
+			}else if(points == 0 && playerFinesseWeapons > player.skillFinesseWeapons()) {
+				finesseUp = ' ';
+				finesseDown = '-';
+			}else if(points == 0) {
+				finesseUp = ' ';
+				finesseDown = ' ';
+			}else {
+				finesseUp = '+';
+				finesseDown = '-';
+			}
+			if(playerRangedWeapons == player.skillRangedWeapons() && points > 0) {
+				rangedUp = '+';
+				rangedDown = ' ';
+			}else if(points == 0 && playerRangedWeapons > player.skillRangedWeapons()) {
+				rangedUp = ' ';
+				rangedDown = '-';
+			}else if(points == 0) {
+				rangedUp = ' ';
+				rangedDown = ' ';
+			}else {
+				rangedUp = '+';
+				rangedDown = '-';
+			}
+			if(playerFortitude == player.skillFortitude() && points > 0) {
+				fortitudeUp = '+';
+				fortitudeDown = ' ';
+			}else if(points == 0 && playerFortitude > player.skillFortitude()) {
+				fortitudeUp = ' ';
+				fortitudeDown = '-';
+			}else if(points == 0) {
+				fortitudeUp = ' ';
+				fortitudeDown = ' ';
+			}else {
+				fortitudeUp = '+';
+				fortitudeDown = '-';
+			}
+			if(playerPerception == player.skillPerception() && points > 0) {
+				percepUp = '+';
+				percepDown = ' ';
+			}else if(points == 0 && playerPerception > player.skillPerception()) {
+				percepUp = ' ';
+				percepDown = '-';
+			}else if(points == 0) {
+				percepUp = ' ';
+				percepDown = ' ';
+			}else {
+				percepUp = '+';
+				percepDown = '-';
+			}
+			if(playerStealth == player.skillStealth() && points > 0) {
+				stealthUp = '+';
+				stealthDown = ' ';
+			}else if(points == 0 && playerStealth > player.skillStealth()) {
+				stealthUp = ' ';
+				stealthDown = '-';
+			}else if(points == 0) {
+				stealthUp = ' ';
+				stealthDown = ' ';
+			}else {
+				stealthUp = '+';
+				stealthDown = '-';
+			}
+			if(playerEvocation == player.skillEvocation() && points > 0) {
+				evoUp = '+';
+				evoDown = ' ';
+			}else if(points == 0 && playerEvocation > player.skillEvocation()) {
+				evoUp = ' ';
+				evoDown = '-';
+			}else if(points == 0) {
+				evoUp = ' ';
+				evoDown = ' ';
+			}else {
+				evoUp = '+';
+				evoDown = '-';
+			}
+			if(playerPyromancy == player.skillPyromancy() && points > 0) {
+				pyroUp = '+';
+				pyroDown = ' ';
+			}else if(points == 0 && playerPyromancy > player.skillPyromancy()) {
+				pyroUp = ' ';
+				pyroDown = '-';
+			}else if(points == 0) {
+				pyroUp = ' ';
+				pyroDown = ' ';
+			}else {
+				pyroUp = '+';
+				pyroDown = '-';
+			}
+			if(playerCryomancy == player.skillCryomancy() && points > 0) {
+				cryoUp = '+';
+				cryoDown = ' ';
+			}else if(points == 0 && playerCryomancy > player.skillCryomancy()) {
+				cryoUp = ' ';
+				cryoDown = '-';
+			}else if(points == 0) {
+				cryoUp = ' ';
+				cryoDown = ' ';
+			}else {
+				cryoUp = '+';
+				cryoDown = '-';
+			}
+			if(playerElectromancy == player.skillElectromancy() && points > 0) {
+				electroUp = '+';
+				electroDown = ' ';
+			}else if(points == 0 && playerElectromancy > player.skillElectromancy()) {
+				electroUp = ' ';
+				electroDown = '-';
+			}else if(points == 0) {
+				electroUp = ' ';
+				electroDown = ' ';
+			}else {
+				electroUp = '+';
+				electroDown = '-';
+			}
+			if(playerAlchemancy == player.skillAlchemancy() && points > 0) {
+				alchUp = '+';
+				alchDown = ' ';
+			}else if(points == 0 && playerAlchemancy > player.skillAlchemancy()) {
+				alchUp = ' ';
+				alchDown = '-';
+			}else if(points == 0) {
+				alchUp = ' ';
+				alchDown = ' ';
+			}else {
+				alchUp = '+';
+				alchDown = '-';
+			}
 		}else if(check == 8) {
 			simpleLeft = ' ';
 			simpleRight = ' ';
@@ -319,6 +1592,162 @@ public class PlayerLevelUpSkillsScreen implements Screen{
 			electroRight = ' ';
 			alchLeft = ' ';
 			alchRight = ' ';
+			if(playerSimpleWeapons == player.skillSimpleWeapons() && points > 0) {
+				simpleUp = '+';
+				simpleDown = ' ';
+			}else if(points == 0 && playerSimpleWeapons > player.skillSimpleWeapons()) {
+				simpleUp = ' ';
+				simpleDown = '-';
+			}else if(points == 0) {
+				simpleUp = ' ';
+				simpleDown = ' ';
+			}else {
+				simpleUp = '+';
+				simpleDown = '-';
+			}
+			if(playerMartialWeapons == player.skillMartialWeapons() && points > 0) {
+				martialUp = '+';
+				martialDown = ' ';
+			}else if(points == 0 && playerMartialWeapons > player.skillMartialWeapons()) {
+				martialUp = ' ';
+				martialDown = '-';
+			}else if(points == 0) {
+				martialUp = ' ';
+				martialDown = ' ';
+			}else {
+				martialUp = '+';
+				martialDown = '-';
+			}
+			if(playerFinesseWeapons == player.skillFinesseWeapons() && points > 0) {
+				finesseUp = '+';
+				finesseDown = ' ';
+			}else if(points == 0 && playerFinesseWeapons > player.skillFinesseWeapons()) {
+				finesseUp = ' ';
+				finesseDown = '-';
+			}else if(points == 0) {
+				finesseUp = ' ';
+				finesseDown = ' ';
+			}else {
+				finesseUp = '+';
+				finesseDown = '-';
+			}
+			if(playerRangedWeapons == player.skillRangedWeapons() && points > 0) {
+				rangedUp = '+';
+				rangedDown = ' ';
+			}else if(points == 0 && playerRangedWeapons > player.skillRangedWeapons()) {
+				rangedUp = ' ';
+				rangedDown = '-';
+			}else if(points == 0) {
+				rangedUp = ' ';
+				rangedDown = ' ';
+			}else {
+				rangedUp = '+';
+				rangedDown = '-';
+			}
+			if(playerFortitude == player.skillFortitude() && points > 0) {
+				fortitudeUp = '+';
+				fortitudeDown = ' ';
+			}else if(points == 0 && playerFortitude > player.skillFortitude()) {
+				fortitudeUp = ' ';
+				fortitudeDown = '-';
+			}else if(points == 0) {
+				fortitudeUp = ' ';
+				fortitudeDown = ' ';
+			}else {
+				fortitudeUp = '+';
+				fortitudeDown = '-';
+			}
+			if(playerPerception == player.skillPerception() && points > 0) {
+				percepUp = '+';
+				percepDown = ' ';
+			}else if(points == 0 && playerPerception > player.skillPerception()) {
+				percepUp = ' ';
+				percepDown = '-';
+			}else if(points == 0) {
+				percepUp = ' ';
+				percepDown = ' ';
+			}else {
+				percepUp = '+';
+				percepDown = '-';
+			}
+			if(playerStealth == player.skillStealth() && points > 0) {
+				stealthUp = '+';
+				stealthDown = ' ';
+			}else if(points == 0 && playerStealth > player.skillStealth()) {
+				stealthUp = ' ';
+				stealthDown = '-';
+			}else if(points == 0) {
+				stealthUp = ' ';
+				stealthDown = ' ';
+			}else {
+				stealthUp = '+';
+				stealthDown = '-';
+			}
+			if(playerEvocation == player.skillEvocation() && points > 0) {
+				evoUp = '+';
+				evoDown = ' ';
+			}else if(points == 0 && playerEvocation > player.skillEvocation()) {
+				evoUp = ' ';
+				evoDown = '-';
+			}else if(points == 0) {
+				evoUp = ' ';
+				evoDown = ' ';
+			}else {
+				evoUp = '+';
+				evoDown = '-';
+			}
+			if(playerPyromancy == player.skillPyromancy() && points > 0) {
+				pyroUp = '+';
+				pyroDown = ' ';
+			}else if(points == 0 && playerPyromancy > player.skillPyromancy()) {
+				pyroUp = ' ';
+				pyroDown = '-';
+			}else if(points == 0) {
+				pyroUp = ' ';
+				pyroDown = ' ';
+			}else {
+				pyroUp = '+';
+				pyroDown = '-';
+			}
+			if(playerCryomancy == player.skillCryomancy() && points > 0) {
+				cryoUp = '+';
+				cryoDown = ' ';
+			}else if(points == 0 && playerCryomancy > player.skillCryomancy()) {
+				cryoUp = ' ';
+				cryoDown = '-';
+			}else if(points == 0) {
+				cryoUp = ' ';
+				cryoDown = ' ';
+			}else {
+				cryoUp = '+';
+				cryoDown = '-';
+			}
+			if(playerElectromancy == player.skillElectromancy() && points > 0) {
+				electroUp = '+';
+				electroDown = ' ';
+			}else if(points == 0 && playerElectromancy > player.skillElectromancy()) {
+				electroUp = ' ';
+				electroDown = '-';
+			}else if(points == 0) {
+				electroUp = ' ';
+				electroDown = ' ';
+			}else {
+				electroUp = '+';
+				electroDown = '-';
+			}
+			if(playerAlchemancy == player.skillAlchemancy() && points > 0) {
+				alchUp = '+';
+				alchDown = ' ';
+			}else if(points == 0 && playerAlchemancy > player.skillAlchemancy()) {
+				alchUp = ' ';
+				alchDown = '-';
+			}else if(points == 0) {
+				alchUp = ' ';
+				alchDown = ' ';
+			}else {
+				alchUp = '+';
+				alchDown = '-';
+			}
 		}else if(check == 9) {
 			simpleLeft = ' ';
 			simpleRight = ' ';
@@ -344,6 +1773,162 @@ public class PlayerLevelUpSkillsScreen implements Screen{
 			electroRight = ' ';
 			alchLeft = ' ';
 			alchRight = ' ';
+			if(playerSimpleWeapons == player.skillSimpleWeapons() && points > 0) {
+				simpleUp = '+';
+				simpleDown = ' ';
+			}else if(points == 0 && playerSimpleWeapons > player.skillSimpleWeapons()) {
+				simpleUp = ' ';
+				simpleDown = '-';
+			}else if(points == 0) {
+				simpleUp = ' ';
+				simpleDown = ' ';
+			}else {
+				simpleUp = '+';
+				simpleDown = '-';
+			}
+			if(playerMartialWeapons == player.skillMartialWeapons() && points > 0) {
+				martialUp = '+';
+				martialDown = ' ';
+			}else if(points == 0 && playerMartialWeapons > player.skillMartialWeapons()) {
+				martialUp = ' ';
+				martialDown = '-';
+			}else if(points == 0) {
+				martialUp = ' ';
+				martialDown = ' ';
+			}else {
+				martialUp = '+';
+				martialDown = '-';
+			}
+			if(playerFinesseWeapons == player.skillFinesseWeapons() && points > 0) {
+				finesseUp = '+';
+				finesseDown = ' ';
+			}else if(points == 0 && playerFinesseWeapons > player.skillFinesseWeapons()) {
+				finesseUp = ' ';
+				finesseDown = '-';
+			}else if(points == 0) {
+				finesseUp = ' ';
+				finesseDown = ' ';
+			}else {
+				finesseUp = '+';
+				finesseDown = '-';
+			}
+			if(playerRangedWeapons == player.skillRangedWeapons() && points > 0) {
+				rangedUp = '+';
+				rangedDown = ' ';
+			}else if(points == 0 && playerRangedWeapons > player.skillRangedWeapons()) {
+				rangedUp = ' ';
+				rangedDown = '-';
+			}else if(points == 0) {
+				rangedUp = ' ';
+				rangedDown = ' ';
+			}else {
+				rangedUp = '+';
+				rangedDown = '-';
+			}
+			if(playerFortitude == player.skillFortitude() && points > 0) {
+				fortitudeUp = '+';
+				fortitudeDown = ' ';
+			}else if(points == 0 && playerFortitude > player.skillFortitude()) {
+				fortitudeUp = ' ';
+				fortitudeDown = '-';
+			}else if(points == 0) {
+				fortitudeUp = ' ';
+				fortitudeDown = ' ';
+			}else {
+				fortitudeUp = '+';
+				fortitudeDown = '-';
+			}
+			if(playerPerception == player.skillPerception() && points > 0) {
+				percepUp = '+';
+				percepDown = ' ';
+			}else if(points == 0 && playerPerception > player.skillPerception()) {
+				percepUp = ' ';
+				percepDown = '-';
+			}else if(points == 0) {
+				percepUp = ' ';
+				percepDown = ' ';
+			}else {
+				percepUp = '+';
+				percepDown = '-';
+			}
+			if(playerStealth == player.skillStealth() && points > 0) {
+				stealthUp = '+';
+				stealthDown = ' ';
+			}else if(points == 0 && playerStealth > player.skillStealth()) {
+				stealthUp = ' ';
+				stealthDown = '-';
+			}else if(points == 0) {
+				stealthUp = ' ';
+				stealthDown = ' ';
+			}else {
+				stealthUp = '+';
+				stealthDown = '-';
+			}
+			if(playerEvocation == player.skillEvocation() && points > 0) {
+				evoUp = '+';
+				evoDown = ' ';
+			}else if(points == 0 && playerEvocation > player.skillEvocation()) {
+				evoUp = ' ';
+				evoDown = '-';
+			}else if(points == 0) {
+				evoUp = ' ';
+				evoDown = ' ';
+			}else {
+				evoUp = '+';
+				evoDown = '-';
+			}
+			if(playerPyromancy == player.skillPyromancy() && points > 0) {
+				pyroUp = '+';
+				pyroDown = ' ';
+			}else if(points == 0 && playerPyromancy > player.skillPyromancy()) {
+				pyroUp = ' ';
+				pyroDown = '-';
+			}else if(points == 0) {
+				pyroUp = ' ';
+				pyroDown = ' ';
+			}else {
+				pyroUp = '+';
+				pyroDown = '-';
+			}
+			if(playerCryomancy == player.skillCryomancy() && points > 0) {
+				cryoUp = '+';
+				cryoDown = ' ';
+			}else if(points == 0 && playerCryomancy > player.skillCryomancy()) {
+				cryoUp = ' ';
+				cryoDown = '-';
+			}else if(points == 0) {
+				cryoUp = ' ';
+				cryoDown = ' ';
+			}else {
+				cryoUp = '+';
+				cryoDown = '-';
+			}
+			if(playerElectromancy == player.skillElectromancy() && points > 0) {
+				electroUp = '+';
+				electroDown = ' ';
+			}else if(points == 0 && playerElectromancy > player.skillElectromancy()) {
+				electroUp = ' ';
+				electroDown = '-';
+			}else if(points == 0) {
+				electroUp = ' ';
+				electroDown = ' ';
+			}else {
+				electroUp = '+';
+				electroDown = '-';
+			}
+			if(playerAlchemancy == player.skillAlchemancy() && points > 0) {
+				alchUp = '+';
+				alchDown = ' ';
+			}else if(points == 0 && playerAlchemancy > player.skillAlchemancy()) {
+				alchUp = ' ';
+				alchDown = '-';
+			}else if(points == 0) {
+				alchUp = ' ';
+				alchDown = ' ';
+			}else {
+				alchUp = '+';
+				alchDown = '-';
+			}
 		}else if(check == 10) {
 			simpleLeft = ' ';
 			simpleRight = ' ';
@@ -369,6 +1954,162 @@ public class PlayerLevelUpSkillsScreen implements Screen{
 			electroRight = '<';
 			alchLeft = ' ';
 			alchRight = ' ';
+			if(playerSimpleWeapons == player.skillSimpleWeapons() && points > 0) {
+				simpleUp = '+';
+				simpleDown = ' ';
+			}else if(points == 0 && playerSimpleWeapons > player.skillSimpleWeapons()) {
+				simpleUp = ' ';
+				simpleDown = '-';
+			}else if(points == 0) {
+				simpleUp = ' ';
+				simpleDown = ' ';
+			}else {
+				simpleUp = '+';
+				simpleDown = '-';
+			}
+			if(playerMartialWeapons == player.skillMartialWeapons() && points > 0) {
+				martialUp = '+';
+				martialDown = ' ';
+			}else if(points == 0 && playerMartialWeapons > player.skillMartialWeapons()) {
+				martialUp = ' ';
+				martialDown = '-';
+			}else if(points == 0) {
+				martialUp = ' ';
+				martialDown = ' ';
+			}else {
+				martialUp = '+';
+				martialDown = '-';
+			}
+			if(playerFinesseWeapons == player.skillFinesseWeapons() && points > 0) {
+				finesseUp = '+';
+				finesseDown = ' ';
+			}else if(points == 0 && playerFinesseWeapons > player.skillFinesseWeapons()) {
+				finesseUp = ' ';
+				finesseDown = '-';
+			}else if(points == 0) {
+				finesseUp = ' ';
+				finesseDown = ' ';
+			}else {
+				finesseUp = '+';
+				finesseDown = '-';
+			}
+			if(playerRangedWeapons == player.skillRangedWeapons() && points > 0) {
+				rangedUp = '+';
+				rangedDown = ' ';
+			}else if(points == 0 && playerRangedWeapons > player.skillRangedWeapons()) {
+				rangedUp = ' ';
+				rangedDown = '-';
+			}else if(points == 0) {
+				rangedUp = ' ';
+				rangedDown = ' ';
+			}else {
+				rangedUp = '+';
+				rangedDown = '-';
+			}
+			if(playerFortitude == player.skillFortitude() && points > 0) {
+				fortitudeUp = '+';
+				fortitudeDown = ' ';
+			}else if(points == 0 && playerFortitude > player.skillFortitude()) {
+				fortitudeUp = ' ';
+				fortitudeDown = '-';
+			}else if(points == 0) {
+				fortitudeUp = ' ';
+				fortitudeDown = ' ';
+			}else {
+				fortitudeUp = '+';
+				fortitudeDown = '-';
+			}
+			if(playerPerception == player.skillPerception() && points > 0) {
+				percepUp = '+';
+				percepDown = ' ';
+			}else if(points == 0 && playerPerception > player.skillPerception()) {
+				percepUp = ' ';
+				percepDown = '-';
+			}else if(points == 0) {
+				percepUp = ' ';
+				percepDown = ' ';
+			}else {
+				percepUp = '+';
+				percepDown = '-';
+			}
+			if(playerStealth == player.skillStealth() && points > 0) {
+				stealthUp = '+';
+				stealthDown = ' ';
+			}else if(points == 0 && playerStealth > player.skillStealth()) {
+				stealthUp = ' ';
+				stealthDown = '-';
+			}else if(points == 0) {
+				stealthUp = ' ';
+				stealthDown = ' ';
+			}else {
+				stealthUp = '+';
+				stealthDown = '-';
+			}
+			if(playerEvocation == player.skillEvocation() && points > 0) {
+				evoUp = '+';
+				evoDown = ' ';
+			}else if(points == 0 && playerEvocation > player.skillEvocation()) {
+				evoUp = ' ';
+				evoDown = '-';
+			}else if(points == 0) {
+				evoUp = ' ';
+				evoDown = ' ';
+			}else {
+				evoUp = '+';
+				evoDown = '-';
+			}
+			if(playerPyromancy == player.skillPyromancy() && points > 0) {
+				pyroUp = '+';
+				pyroDown = ' ';
+			}else if(points == 0 && playerPyromancy > player.skillPyromancy()) {
+				pyroUp = ' ';
+				pyroDown = '-';
+			}else if(points == 0) {
+				pyroUp = ' ';
+				pyroDown = ' ';
+			}else {
+				pyroUp = '+';
+				pyroDown = '-';
+			}
+			if(playerCryomancy == player.skillCryomancy() && points > 0) {
+				cryoUp = '+';
+				cryoDown = ' ';
+			}else if(points == 0 && playerCryomancy > player.skillCryomancy()) {
+				cryoUp = ' ';
+				cryoDown = '-';
+			}else if(points == 0) {
+				cryoUp = ' ';
+				cryoDown = ' ';
+			}else {
+				cryoUp = '+';
+				cryoDown = '-';
+			}
+			if(playerElectromancy == player.skillElectromancy() && points > 0) {
+				electroUp = '+';
+				electroDown = ' ';
+			}else if(points == 0 && playerElectromancy > player.skillElectromancy()) {
+				electroUp = ' ';
+				electroDown = '-';
+			}else if(points == 0) {
+				electroUp = ' ';
+				electroDown = ' ';
+			}else {
+				electroUp = '+';
+				electroDown = '-';
+			}
+			if(playerAlchemancy == player.skillAlchemancy() && points > 0) {
+				alchUp = '+';
+				alchDown = ' ';
+			}else if(points == 0 && playerAlchemancy > player.skillAlchemancy()) {
+				alchUp = ' ';
+				alchDown = '-';
+			}else if(points == 0) {
+				alchUp = ' ';
+				alchDown = ' ';
+			}else {
+				alchUp = '+';
+				alchDown = '-';
+			}
 		}else if(check == 11) {
 			simpleLeft = ' ';
 			simpleRight = ' ';
@@ -394,6 +2135,162 @@ public class PlayerLevelUpSkillsScreen implements Screen{
 			electroRight = ' ';
 			alchLeft = '>';
 			alchRight = '<';
+			if(playerSimpleWeapons == player.skillSimpleWeapons() && points > 0) {
+				simpleUp = '+';
+				simpleDown = ' ';
+			}else if(points == 0 && playerSimpleWeapons > player.skillSimpleWeapons()) {
+				simpleUp = ' ';
+				simpleDown = '-';
+			}else if(points == 0) {
+				simpleUp = ' ';
+				simpleDown = ' ';
+			}else {
+				simpleUp = '+';
+				simpleDown = '-';
+			}
+			if(playerMartialWeapons == player.skillMartialWeapons() && points > 0) {
+				martialUp = '+';
+				martialDown = ' ';
+			}else if(points == 0 && playerMartialWeapons > player.skillMartialWeapons()) {
+				martialUp = ' ';
+				martialDown = '-';
+			}else if(points == 0) {
+				martialUp = ' ';
+				martialDown = ' ';
+			}else {
+				martialUp = '+';
+				martialDown = '-';
+			}
+			if(playerFinesseWeapons == player.skillFinesseWeapons() && points > 0) {
+				finesseUp = '+';
+				finesseDown = ' ';
+			}else if(points == 0 && playerFinesseWeapons > player.skillFinesseWeapons()) {
+				finesseUp = ' ';
+				finesseDown = '-';
+			}else if(points == 0) {
+				finesseUp = ' ';
+				finesseDown = ' ';
+			}else {
+				finesseUp = '+';
+				finesseDown = '-';
+			}
+			if(playerRangedWeapons == player.skillRangedWeapons() && points > 0) {
+				rangedUp = '+';
+				rangedDown = ' ';
+			}else if(points == 0 && playerRangedWeapons > player.skillRangedWeapons()) {
+				rangedUp = ' ';
+				rangedDown = '-';
+			}else if(points == 0) {
+				rangedUp = ' ';
+				rangedDown = ' ';
+			}else {
+				rangedUp = '+';
+				rangedDown = '-';
+			}
+			if(playerFortitude == player.skillFortitude() && points > 0) {
+				fortitudeUp = '+';
+				fortitudeDown = ' ';
+			}else if(points == 0 && playerFortitude > player.skillFortitude()) {
+				fortitudeUp = ' ';
+				fortitudeDown = '-';
+			}else if(points == 0) {
+				fortitudeUp = ' ';
+				fortitudeDown = ' ';
+			}else {
+				fortitudeUp = '+';
+				fortitudeDown = '-';
+			}
+			if(playerPerception == player.skillPerception() && points > 0) {
+				percepUp = '+';
+				percepDown = ' ';
+			}else if(points == 0 && playerPerception > player.skillPerception()) {
+				percepUp = ' ';
+				percepDown = '-';
+			}else if(points == 0) {
+				percepUp = ' ';
+				percepDown = ' ';
+			}else {
+				percepUp = '+';
+				percepDown = '-';
+			}
+			if(playerStealth == player.skillStealth() && points > 0) {
+				stealthUp = '+';
+				stealthDown = ' ';
+			}else if(points == 0 && playerStealth > player.skillStealth()) {
+				stealthUp = ' ';
+				stealthDown = '-';
+			}else if(points == 0) {
+				stealthUp = ' ';
+				stealthDown = ' ';
+			}else {
+				stealthUp = '+';
+				stealthDown = '-';
+			}
+			if(playerEvocation == player.skillEvocation() && points > 0) {
+				evoUp = '+';
+				evoDown = ' ';
+			}else if(points == 0 && playerEvocation > player.skillEvocation()) {
+				evoUp = ' ';
+				evoDown = '-';
+			}else if(points == 0) {
+				evoUp = ' ';
+				evoDown = ' ';
+			}else {
+				evoUp = '+';
+				evoDown = '-';
+			}
+			if(playerPyromancy == player.skillPyromancy() && points > 0) {
+				pyroUp = '+';
+				pyroDown = ' ';
+			}else if(points == 0 && playerPyromancy > player.skillPyromancy()) {
+				pyroUp = ' ';
+				pyroDown = '-';
+			}else if(points == 0) {
+				pyroUp = ' ';
+				pyroDown = ' ';
+			}else {
+				pyroUp = '+';
+				pyroDown = '-';
+			}
+			if(playerCryomancy == player.skillCryomancy() && points > 0) {
+				cryoUp = '+';
+				cryoDown = ' ';
+			}else if(points == 0 && playerCryomancy > player.skillCryomancy()) {
+				cryoUp = ' ';
+				cryoDown = '-';
+			}else if(points == 0) {
+				cryoUp = ' ';
+				cryoDown = ' ';
+			}else {
+				cryoUp = '+';
+				cryoDown = '-';
+			}
+			if(playerElectromancy == player.skillElectromancy() && points > 0) {
+				electroUp = '+';
+				electroDown = ' ';
+			}else if(points == 0 && playerElectromancy > player.skillElectromancy()) {
+				electroUp = ' ';
+				electroDown = '-';
+			}else if(points == 0) {
+				electroUp = ' ';
+				electroDown = ' ';
+			}else {
+				electroUp = '+';
+				electroDown = '-';
+			}
+			if(playerAlchemancy == player.skillAlchemancy() && points > 0) {
+				alchUp = '+';
+				alchDown = ' ';
+			}else if(points == 0 && playerAlchemancy > player.skillAlchemancy()) {
+				alchUp = ' ';
+				alchDown = '-';
+			}else if(points == 0) {
+				alchUp = ' ';
+				alchDown = ' ';
+			}else {
+				alchUp = '+';
+				alchDown = '-';
+			}
 		}
 	}
 	
@@ -423,18 +2320,18 @@ public class PlayerLevelUpSkillsScreen implements Screen{
 		
 		terminal.writeCenter(String.format("-- Points remaining: %d --", points), y);
 		
-		terminal.writeCenter(String.format("%c Simple Weapons ( %d ) %c", simpleLeft, playerSimpleWeapons, simpleRight), y+=3);
-		terminal.writeCenter(String.format("%c Martial Weapons ( %d ) %c", martialLeft, playerMartialWeapons, martialRight), y+=2);
-		terminal.writeCenter(String.format("%c Finesse Weapons ( %d ) %c", finesseLeft, playerFinesseWeapons, finesseRight), y+=2);
-		terminal.writeCenter(String.format("%c Ranged Weapons ( %d ) %c", rangedLeft, playerRangedWeapons, rangedRight), y+=2);
-		terminal.writeCenter(String.format("%c Fortitude ( %d ) %c", fortitudeLeft, playerFortitude, fortitudeRight), y+=2);
-		terminal.writeCenter(String.format("%c Perception ( %d ) %c", percepLeft, playerPerception, percepRight), y+=2);
-		terminal.writeCenter(String.format("%c Stealth ( %d ) %c", stealthLeft, playerStealth, stealthRight), y+=2);
-		terminal.writeCenter(String.format("%c Evocation ( %d ) %c", evoLeft, playerEvocation, evoRight), y+=2);
-		terminal.writeCenter(String.format("%c Pyromancy ( %d ) %c", pyroLeft, playerPyromancy, pyroRight), y+=2);
-		terminal.writeCenter(String.format("%c Cryomancy ( %d ) %c", cryoLeft, playerCryomancy, cryoRight), y+=2);
-		terminal.writeCenter(String.format("%c Electromancy ( %d ) %c", electroLeft, playerElectromancy, electroRight), y+=2);
-		terminal.writeCenter(String.format("%c Alchemancy ( %d ) %c", alchLeft, playerAlchemancy, alchRight), y+=2);
+		terminal.writeCenter(String.format("%c %c Simple Weapons ( %d ) %c %c", simpleDown, simpleLeft, playerSimpleWeapons, simpleRight, simpleUp), y+=3);
+		terminal.writeCenter(String.format("%c %c Martial Weapons ( %d ) %c %c", martialDown, martialLeft, playerMartialWeapons, martialRight, martialUp), y+=2);
+		terminal.writeCenter(String.format("%c %c Finesse Weapons ( %d ) %c %c", finesseDown, finesseLeft, playerFinesseWeapons, finesseRight, finesseUp), y+=2);
+		terminal.writeCenter(String.format("%c %c Ranged Weapons ( %d ) %c %c", rangedDown, rangedLeft, playerRangedWeapons, rangedRight, rangedUp), y+=2);
+		terminal.writeCenter(String.format("%c %c Fortitude ( %d ) %c %c", fortitudeDown, fortitudeLeft, playerFortitude, fortitudeRight, fortitudeUp), y+=2);
+		terminal.writeCenter(String.format("%c %c Perception ( %d ) %c %c", percepDown,  percepLeft, playerPerception, percepRight, percepUp), y+=2);
+		terminal.writeCenter(String.format("%c %c Stealth ( %d ) %c %c", stealthDown, stealthLeft, playerStealth, stealthRight, stealthUp), y+=2);
+		terminal.writeCenter(String.format("%c %c Evocation ( %d ) %c %c", evoDown, evoLeft, playerEvocation, evoRight, evoUp), y+=2);
+		terminal.writeCenter(String.format("%c %c Pyromancy ( %d ) %c %c", pyroDown, pyroLeft, playerPyromancy, pyroRight, pyroUp), y+=2);
+		terminal.writeCenter(String.format("%c %c Cryomancy ( %d ) %c %c", cryoDown, cryoLeft, playerCryomancy, cryoRight, cryoUp), y+=2);
+		terminal.writeCenter(String.format("%c %c Electromancy ( %d ) %c %c", electroDown, electroLeft, playerElectromancy, electroRight, electroUp), y+=2);
+		terminal.writeCenter(String.format("%c %c Alchemancy ( %d ) %c %c", alchDown, alchLeft, playerAlchemancy, alchRight, alchUp), y+=2);
 		
 		if(check == 0) {
 			terminal.writeCenter("Simple Weapons represents your skill with simple weapons", y+=4);
